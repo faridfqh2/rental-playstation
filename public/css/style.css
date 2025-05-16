@@ -1,0 +1,10 @@
+
+body {
+    background-color: grey;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999; /* supaya tetap di atas elemen lain */
+  }
