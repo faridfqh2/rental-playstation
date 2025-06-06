@@ -2,27 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function __invoke()
     {
-        $this->middleware('auth');
-    }
+        // Ambil data appointments dengan relasi client dan employee
+        $appointments = Appointment::with(['client', 'employee'])->get();
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
+        // Format events untuk FullCalendar
+        $events = [];
+        foreach ($appointments as $appointment) {
+            $events[] = [
+                'title' => $appointment->client->name . ' (' . $appointment->employee->name . ')',
+                'start' => $appointment->start_time,
+                'end' => $appointment->finish_time,
+            ];
+        }
+
+        return view('schedule', compact('events'));
     }
+    // File: app/Http/Controllers/HomeController.php
+
+
+public function index()
+{
+    $games = Game::paginate(9); // atau Game::all() jika tidak ingin pagination
+    return view('games', compact('games'));
+}
+
 }

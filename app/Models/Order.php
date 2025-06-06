@@ -12,12 +12,16 @@ class Order extends Model
     protected $table = 'orders';
 
     // Kolom yang boleh diisi massal (mass assignable)
-    protected $fillable = [
-        'name',
-        'phone',
-        'qty',
-        'total_price',
-        'address',
-        'status',
-    ];
+  protected $fillable = [
+    'name',
+    'phone',
+    'qty',
+    'total_price',
+    'address',
+    'status',
+    'midtrans_order_id', // tambahkan ini
+    'tanggal_booking',
+    'jam_booking',
+];
+
 }

@@ -1,80 +1,92 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@yield('title') - Rental Playstation</title>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <!-- CSS Vendor -->
+    <link href="Blogy/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Blogy/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="Blogy/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="Blogy/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="Blogy/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="Blogy/assets/css/main.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    @yield('styles')
 </head>
+
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <header id="header" class="header position-relative">
+        <div class="container-fluid container-xl position-relative">
+            <div class="top-row d-flex align-items-center justify-content-between">
+                <a href="/" class="logo d-flex align-items-end">
+                    <h1 class="sitename">Rental Playstation</h1><span>.</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                <div class="d-flex align-items-center">
+                    <div class="social-links">
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <form class="search-form ms-4">
+                        <input type="text" placeholder="Search..." class="form-control" />
+                        <button type="submit" class="btn"><i class="bi bi-search"></i></button>
+                    </form>
                 </div>
             </div>
-        </nav>
+        </div>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+        <div class="nav-wrap">
+            <div class="container d-flex justify-content-center position-relative">
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="/" class="active">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+
+                        <li><a href="/schedule">Schedule</a></li>
+                        <li class="dropdown"><a href="#"><span>Payment</span> <i
+                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="{{route('login')}}">Log in</a></li>
+                                <li><a href="/pembayaran">Payment</a></li>
+                                <li><a href="/schedule">Check Schedule</a></li>
+                                <li><a href="search-results.html">Search Results</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/kontak">Contact</a></li>
+                        <li style="list-style: none; margin-left: 10px;">
+                            <form method="POST" action="{{ route('logout') }}" style="margin: 0; padding: 0;">
+                                @csrf
+                                <button type="submit" title="Logout"
+                                    style="background: none; border: none; color: rgb(228, 171, 0); cursor: pointer; font-size: 20px; display: flex; align-items: center;">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                </button>
+                            </form>
+                        </li>
+
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    @yield('content')
+
+    <!-- JS Vendor -->
+    <script src="Blogy/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="Blogy/assets/vendor/aos/aos.js"></script>
+    <script src="Blogy/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="Blogy/assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+    @yield('scripts')
+
 </body>
+
 </html>

@@ -19,7 +19,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'farid',
             'email' => 'test@example.com',
             'password'=> bcrypt('abcd123'),
-            'phone' => '081347515557'
+            'phone' => '081347515557',
+            'role' => 'admin'
         ]);
+         $this->call(OrderSeeder::class);
     }
 }

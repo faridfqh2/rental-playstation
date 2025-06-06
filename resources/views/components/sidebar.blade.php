@@ -1,111 +1,56 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 text-white shadow-sm position-relative sidebar-container"
-     style="width: 250px; height: 100vh; border-top-right-radius: 20px; border-bottom-right-radius: 20px; overflow: hidden;">
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- Gambar sebagai latar -->
-  <img src="/img/stik.jpg" class="position-absolute w-100 h-100 object-fit-cover z-n1" alt="Sidebar Background"
-       style="top: 0; left: 0; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Dashboard - Admin</title>
 
-  <!-- Overlay -->
-  <div class="position-absolute w-100 h-100"
-       style="background-color: rgba(0,0,0,0.6); top: 0; left: 0; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
-  </div>
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="{{ asset('rental/css/styles.css') }}" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
 
-  <!-- Isi sidebar -->
-  <a href="{{ url('/') }}" class="d-flex align-items-center mb-4 text-white text-decoration-none fade-in"
-   style="position: relative; z-index: 2;">
-  <span class="fs-4 fw-semibold">Rental Playstation</span>
-  </a>
+<body class="sb-nav-fixed">
+    <!-- Top Navigation -->
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand ps-3" href="{{ url('/') }}">Rental PS</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle"><i
+                class="fas fa-bars"></i></button>
 
-  <hr class="border-light fade-in" style="animation-delay: 0.3s; position: relative; z-index: 2;">
+        <!-- Search -->
+        <form class="d-none d-md-inline-block ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search..." />
+                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
 
-  <ul class="nav nav-pills flex-column mb-auto" style="position: relative; z-index: 2;">
-    <li class="nav-item fade-in" style="animation-delay: 0.4s;">
-      <a href="{{ url('/') }}"
-         class="nav-link text-white d-flex align-items-center gap-2 hover-link">
-        <i class="bi bi-house icon-animate"></i> Beranda
-      </a>
-    </li>
-    <li class="fade-in" style="animation-delay: 0.5s;">
-      <a href="{{ url('/riwayat') }}"
-         class="nav-link text-white d-flex align-items-center gap-2 hover-link">
-        <i class="bi bi-clock-history icon-animate"></i> Riwayat
-      </a>
-    </li>
-    <li class="fade-in" style="animation-delay: 0.6s;">
-      <a href="{{ url('/profile') }}"
-         class="nav-link text-white d-flex align-items-center gap-2 hover-link">
-        <i class="bi bi-person icon-animate"></i> Profil
-      </a>
-    </li>
-  </ul>
+        <!-- User Dropdown -->
+        <ul class="navbar-nav ms-auto me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                    data-bs-toggle="dropdown">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
 
-  <hr class="border-light mt-auto fade-in" style="animation-delay: 0.7s; position: relative; z-index: 2;">
-
-  <!-- Dropdown User -->
-  <div class="dropdown fade-in" style="animation-delay: 0.8s; position: relative; z-index: 2;">
-    <a href="#"
-       class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-       id="dropdownUser"
-       data-bs-toggle="dropdown"
-       aria-expanded="false">
-      <i class="bi bi-person-circle me-2 icon-animate"></i>
-      <strong>User</strong>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser">
-      <li><a class="dropdown-item" href="{{ url('/user/profile') }}">Profil</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li>
-        <a class="dropdown-item" href="#"
-           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-          Logout
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Form Logout di luar dropdown -->
-  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-  </form>
-</div>
-
-<!-- CSS Animasi dan Hover -->
-<style>
-  .hover-link {
-    transition: background-color 0.4s ease, padding-left 0.4s ease, color 0.4s;
-    border-radius: 8px;
-    padding: 0.5rem 0.75rem;
-  }
-
-  .hover-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding-left: 1.2rem;
-    color: #ffc107 !important;
-  }
-
-  .hover-link:hover .icon-animate {
-    transform: scale(1.2) rotate(5deg);
-    transition: transform 0.4s ease-in-out;
-  }
-
-  .icon-animate {
-    transition: transform 0.4s ease;
-  }
-
-  .fade-in {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-  }
-
-  @keyframes fadeInUp {
-    0% {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-</style>
+</html>

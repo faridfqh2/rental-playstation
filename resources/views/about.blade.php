@@ -1,410 +1,398 @@
-<!DOCTYPE html>
-<html lang="en">
+@include('layouts.app')
+<section class="about-3d-section container py-5">
+  <h2 class="text-center mb-5 fw-bold text-dark display-5">Kenapa Memilih <span class="text-dark">PS Kharisma?</span>
+  </h2>
+  <div class="row justify-content-center g-4">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>About - Blogy Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    <div class="col-md-4">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front bg-gold text-dark">
+            <i class="bi bi-controller fs-1 mb-3"></i>
+            <h4>Koleksi Game Lengkap</h4>
+            <p>Main game populer dan terbaru setiap hari.</p>
+          </div>
+          <div class="flip-card-back bg-black text-white">
+            <h5>Lebih dari 100+ Game</h5>
+            <p>Tersedia berbagai genre dari sport hingga RPG.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Favicons -->
-  <link href="Blogy/assets/img/favicon.png" rel="icon">
-  <link href="Blogy/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <div class="col-md-4">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front bg-gold text-dark">
+            <i class="bi bi-people-fill fs-1 mb-3"></i>
+            <h4>Ruang Nyaman</h4>
+            <p>Tempat bermain full AC, bersih, dan cozy.</p>
+          </div>
+          <div class="flip-card-back bg-black text-white">
+            <h5>Fasilitas Premium</h5>
+            <p>Dilengkapi sofa empuk, TV besar, dan headset.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <div class="col-md-4">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front bg-gold text-dark">
+            <i class="bi bi-clock-fill fs-1 mb-3"></i>
+            <h4>Booking Mudah</h4>
+            <p>Pesan jadwal online, kapan pun kamu mau.</p>
+          </div>
+          <div class="flip-card-back bg-black text-white">
+            <h5>24/7 Booking</h5>
+            <p>Gunakan website untuk cek jadwal & bayar langsung.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Vendor CSS Files -->
-  <link href="Blogy/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="Blogy/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="Blogy/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="Blogy/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="Blogy/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  </div>
+</section>
 
-  <!-- Main CSS File -->
-  <link href="Blogy/assets/css/main.css" rel="stylesheet">
+</div>
+<div class="container mt-5">
+  <h3 class="text-center mb-4 text-white fw-bold">Galeri PS Kharisma</h3>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="photo-card">
+        <img src="img/tempat2.jpg" alt="Suasana PS" class="img-fluid rounded-4 shadow">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="photo-card">
+        <img src="img/tempat.jpg" alt="Interior PS Kharisma" class="img-fluid rounded-4 shadow">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="photo-card">
+        <img src="img/tempat3.jpg" alt="Tim Kami" class="img-fluid rounded-4 shadow">
+      </div>
+    </div>
+  </div>
+</div>
 
-  <!-- =======================================================
-  * Template Name: Blogy
-  * Template URL: https://bootstrapmade.com/blogy-bootstrap-blog-template/
-  * Updated: Feb 22 2025 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
 
-<body class="about-page">
+<style>
+  /* Switch Styles */
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
 
-  <header id="header" class="header position-relative">
-    <div class="container-fluid container-xl position-relative">
+  .theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 
-      <div class="top-row d-flex align-items-center justify-content-between">
-        <a href="/" class="logo d-flex align-items-end">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="Blogy/assets/img/logo.webp" alt=""> -->
-          <h1 class="sitename">Rental Playstation</h1><span>.</span>
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked+.slider {
+    background-color: #ffd700;
+  }
+
+  input:checked+.slider:before {
+    transform: translateX(26px);
+  }
+
+  .dark-mode .flip-card-front {
+    background-color: #1f1f1f;
+    color: #fff;
+  }
+
+  .dark-mode .flip-card-back {
+    background-color: #2a2a2a;
+    color: #fff;
+  }
+
+  /* css musik */
+  .btn-3d-music {
+    background: linear-gradient(145deg, #FFD700, #e6be00);
+    color: #111;
+    padding: 16px 40px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 0 #bfa100, 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-3d-music:hover {
+    box-shadow: 0 4px 0 #bfa100, 0 4px 10px rgba(0, 0, 0, 0.4);
+    transform: translateY(2px);
+    background: linear-gradient(145deg, #ffe14c, #f1c40f);
+  }
+
+  .btn-3d-music:active {
+    transform: translateY(5px);
+    box-shadow: 0 2px 0 #bfa100, 0 2px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .btn-3d-music i {
+    font-size: 1.5rem;
+  }
+
+  /* css body */
+  .text-gold {
+    color: #FFD700;
+  }
+
+  .bg-gold {
+    background: linear-gradient(135deg, #FFD700, #FFB800);
+  }
+
+  .btn-gold {
+    background-color: #FFD700;
+    border: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  .btn-gold:hover {
+    background-color: #ffc107;
+    color: #ffffff;
+    transform: scale(1.05);
+  }
+
+  .flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 280px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .flip-card-front {
+    z-index: 2;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+  .photo-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+  }
+
+  .photo-card:hover {
+    transform: rotateY(10deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+  }
+
+  .about-3d-section {
+    perspective: 1000px;
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 280px;
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 30px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .flip-card-front {
+    color: #fff;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+</style>
+<script>
+  const audio = document.getElementById('aboutMusic');
+  const toggleBtn = document.getElementById('toggleMusic');
+  const icon = document.getElementById('musicIcon');
+
+  let isPlaying = false;
+
+  toggleBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      audio.pause();
+      icon.classList.remove('bi-pause-fill');
+      icon.classList.add('bi-volume-up-fill');
+      toggleBtn.innerHTML = '<i id="musicIcon" class="bi bi-volume-up-fill me-2"></i> Mainkan Musik';
+    } else {
+      audio.play();
+      icon.classList.remove('bi-volume-up-fill');
+      icon.classList.add('bi-pause-fill');
+      toggleBtn.innerHTML = '<i id="musicIcon" class="bi bi-pause-fill me-2"></i> Jeda Musik';
+    }
+    isPlaying = !isPlaying;
+  });
+</script>
+
+<footer id="footer" class="footer">
+
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">Rental Playstation</span>
         </a>
-
-        <div class="d-flex align-items-center">
-          <div class="social-links">
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          </div>
-
-          <form class="search-form ms-4">
-            <input type="text" placeholder="Search..." class="form-control">
-            <button type="submit" class="btn"><i class="bi bi-search"></i></button>
-          </form>
+        <div class="footer-contact pt-3">
+          <p>Playstation</p>
+          <p>Yogyakarta</p>
+          <p class="mt-3"><strong>Phone:</strong> <span>+08******</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
         </div>
+        <div class="social-links d-flex mt-4">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Product Management</a></li>
+          <li><a href="#">Marketing</a></li>
+          <li><a href="#">Graphic Design</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Hic solutasetp</h4>
+        <ul>
+          <li><a href="#">Molestiae accusamus iure</a></li>
+          <li><a href="#">Excepturi dignissimos</a></li>
+          <li><a href="#">Suscipit distinctio</a></li>
+          <li><a href="#">Dilecta</a></li>
+          <li><a href="#">Sit quas consectetur</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Nobis illum</h4>
+        <ul>
+          <li><a href="#">Ipsam</a></li>
+          <li><a href="#">Laudantium dolorum</a></li>
+          <li><a href="#">Dinera</a></li>
+          <li><a href="#">Trodelas</a></li>
+          <li><a href="#">Flexo</a></li>
+        </ul>
       </div>
 
     </div>
+  </div>
 
-    <div class="nav-wrap">
-      <div class="container d-flex justify-content-center position-relative">
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about" class="active">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-           
-            <li><a href="/schedule">Schedule</a></li>
-            <li class="dropdown"><a href="#"><span>Payment</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="/login">Pay</a></li>
-                <li><a href="/blog">Choose Payment</a></li>
-                <li><a href="/schedule">Check Schedule</a></li>
-                <li><a href="search-results.html">Search Results</a></li>
-              </ul>
-            </li>
-            <li><a href="/kontak">Contact</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-      </div>
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">-</strong> <span>All Rights Reserved</span></p>
+    <div class="credits">
+      Designed by <a>Faqih</a>
     </div>
-  </header>
+  </div>
 
-  <main class="main">
+</footer>
 
-    <!-- Page Title -->
-    <div class="page-title">
-      <div class="breadcrumbs">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#"><i class="bi bi-house"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Blog</a></li>
-            <li class="breadcrumb-item active current">About</li>
-          </ol>
-        </nav>
-      </div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<script>
+  const toggle = document.getElementById('modeToggle');
+  const body = document.body;
 
-      <div class="title-wrapper">
-        <h1>About</h1>
-        <p>PS Kharisma merupakan layanan penyewaan PlayStation yang berlokasi di Yogyakarta, hadir untuk memenuhi kebutuhan hiburan digital masyarakat dengan menghadirkan suasana bermain yang nyaman, aman, dan menyenangkan.</p>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <span class="section-badge"><i class="bi bi-info-circle"></i> About Us</span>
-        <div class="row">
-          <div class="col-lg-6">
-            <h2 class="about-title">Tentang Playstasion</h2>
-            <p class="about-description">isi...</p>
-          </div>
-          <div class="col-lg-6">
-            <p class="about-text">isi...</p>
-            <p class="about-text">isi...</p>
-          </div>
-        </div>
-
-        <div class="row features-boxes gy-4 mt-3">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="feature-box">
-              <div class="icon-box">
-                <i class="bi bi-bullseye"></i>
-              </div>
-              <h3><a href="#" class="stretched-link">fitur 1</a></h3>
-              <p>isi..</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="feature-box">
-              <div class="icon-box">
-                <i class="bi bi-person-check"></i>
-              </div>
-              <h3><a href="#" class="stretched-link">fitur 2</a></h3>
-              <p>isi...</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="feature-box">
-              <div class="icon-box">
-                <i class="bi bi-clipboard-data"></i>
-              </div>
-              <h3><a href="#" class="stretched-link">fitur 3</a></h3>
-              <p>isi...</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col-lg-12" data-aos="zoom-in" data-aos-delay="200">
-            <div class="video-box">
-              <img src="Blogy/assets/img/about/about-wide-1.webp" class="img-fluid" alt="Video Thumbnail">
-              <a href="https://youtu.be/HpvX59zRYUU?si=NzzPcIAJTQYfVYfl" class="glightbox pulsating-play-btn"></a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Team Section -->
-    <section id="team" class="team section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
-        <div><span>Check Our</span> <span class="description-title">Team</span></div>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="Blogy/assets/img/person/person-m-7.webp" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="Blogy/assets/img/person/person-f-8.webp" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-                <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores exercitationem ut</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="Blogy/assets/img/person/person-m-6.webp" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="Blogy/assets/img/person/person-f-4.webp" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-                <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam quasi quam consectetur</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="Blogy/assets/img/person/person-m-12.webp" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>Brian Doe</h4>
-                <span>Marketing</span>
-                <p>Qui consequuntur quos accusamus magnam quo est molestiae eius laboriosam sunt doloribus quia impedit laborum velit</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="Blogy/assets/img/person/person-f-9.webp" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>Josepha Palas</h4>
-                <span>Operation</span>
-                <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit eligendi cupiditate vel</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Team Section -->
-
-  </main>
-
-  <footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Blogy</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Blogy</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="Blogy/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="Blogy/assets/vendor/php-email-form/validate.js"></script>
-  <script src="Blogy/assets/vendor/aos/aos.js"></script>
-  <script src="Blogy/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="Blogy/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="Blogy/assets/vendor/glightbox/js/glightbox.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="Blogy/assets/js/main.js"></script>
+  toggle.addEventListener('change', function () {
+    body.classList.toggle('dark-mode');
+  });
+</script>
 
 </body>
-
-</html>

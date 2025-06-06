@@ -15,33 +15,38 @@ class AuthController extends Controller
         return view('login');
     }
 
-
     public function auth(Request $request)
     {
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
-    
+
         if (empty($request->email) || empty($request->password)) {
             return back()->withErrors([
                 'kosong' => 'Email dan password harus diisi'
             ]);
         }
-    
+
         $credentials = $request->only('email', 'password');
         $remember = $request->has('remember'); // true jika checkbox dicentang
-    
+
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
-            return redirect('dashboard');
+
+            // Cek peran user
+            $user = Auth::user();
+            if ($user->role === 'admin') {
+                return redirect()->route('admin.dashboard');
+            }
+
+            return redirect('/'); // redirect ke home untuk user biasa
         }
-    
+
         return back()->withErrors([
             'loginError' => 'Email atau Password salah'
         ]);
-    }
-    
+    }   
     public function logout()
     {
         Auth::logout();

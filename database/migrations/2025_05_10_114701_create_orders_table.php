@@ -18,8 +18,12 @@ return new class extends Migration
             $table->string('phone');
             $table->integer('qty');
             $table->bigInteger('total_price');
+             $table->date('tanggal_booking');
+             $table->time('jam_booking');
             $table->enum('status',['Unpaid', 'Paid']);
+            $table->string('midtrans_order_id')->nullable();
             $table->timestamps();
+     
         });
     }
 
