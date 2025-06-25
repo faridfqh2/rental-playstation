@@ -101,7 +101,7 @@
                             <a href="{{ route('sewa.index') }}" class="btn btn-outline-secondary px-4">
                                 <i class="bi bi-arrow-left me-2"></i>Kembali
                             </a>
-                            <button class="btn btn-primary btn-pay">
+                            <button class="btn btn-primary btn-pay" id="pay-button">
                                 <i class="bi bi-lock-fill me-2"></i>Konfirmasi & Bayar Sekarang
                             </button>
                         </div>
@@ -115,7 +115,27 @@
             </div>
         </div>
     </div>
-
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="{{ config('midtrans.client_key') }}"></script>
+    <script>
+        document.getElementById('pay-button').addEventListener('click', function () {
+            snap.pay('{{ $snapToken }}', {
+                onSuccess: function (result) {
+                    alert("Pembayaran berhasil!");
+                    window.location.href = "{{ route('sewa.index') }}";
+                },
+                onPending: function (result) {
+                    alert("Pembayaran tertunda.");
+                },
+                onError: function (result) {
+                    alert("Pembayaran gagal!");
+                },
+                onClose: function () {
+                    alert("Anda menutup popup pembayaran.");
+                }
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

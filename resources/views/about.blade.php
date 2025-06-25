@@ -1,398 +1,476 @@
 @include('layouts.app')
-<section class="about-3d-section container py-5">
-  <h2 class="text-center mb-5 fw-bold text-dark display-5">Kenapa Memilih <span class="text-dark">PS Kharisma?</span>
-  </h2>
-  <div class="row justify-content-center g-4">
 
-    <div class="col-md-4">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front bg-gold text-dark">
-            <i class="bi bi-controller fs-1 mb-3"></i>
-            <h4>Koleksi Game Lengkap</h4>
-            <p>Main game populer dan terbaru setiap hari.</p>
+<section id="features" class="features-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold display-5">Kenapa Memilih <span class="text-gradient">PS Kharisma?</span></h2>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon bg-gradient-1">
+            <i class="bi bi-controller"></i>
           </div>
-          <div class="flip-card-back bg-black text-white">
-            <h5>Lebih dari 100+ Game</h5>
-            <p>Tersedia berbagai genre dari sport hingga RPG.</p>
+          <h3>Game Terlengkap</h3>
+          <p>100+ game terbaru dari berbagai genre siap dimainkan</p>
+          <div class="game-badges">
+            <span class="badge">FIFA 24</span>
+            <span class="badge">GTA V</span>
+            <span class="badge">Spider-Man 2</span>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front bg-gold text-dark">
-            <i class="bi bi-people-fill fs-1 mb-3"></i>
-            <h4>Ruang Nyaman</h4>
-            <p>Tempat bermain full AC, bersih, dan cozy.</p>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon bg-gradient-2">
+            <i class="bi bi-joystick"></i>
           </div>
-          <div class="flip-card-back bg-black text-white">
-            <h5>Fasilitas Premium</h5>
-            <p>Dilengkapi sofa empuk, TV besar, dan headset.</p>
+          <h3>Perangkat Premium</h3>
+          <p>DualSense controller, VR headset, dan TV 4K 55"</p>
+          <div class="specs">
+            <div class="spec-item">
+              <i class="bi bi-tv"></i>
+              <span>TV 4K 55"</span>
+            </div>
+            <div class="spec-item">
+              <i class="bi bi-headset"></i>
+              <span>Headset 7.1</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front bg-gold text-dark">
-            <i class="bi bi-clock-fill fs-1 mb-3"></i>
-            <h4>Booking Mudah</h4>
-            <p>Pesan jadwal online, kapan pun kamu mau.</p>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon bg-gradient-3">
+            <i class="bi bi-lightning-charge"></i>
           </div>
-          <div class="flip-card-back bg-black text-white">
-            <h5>24/7 Booking</h5>
-            <p>Gunakan website untuk cek jadwal & bayar langsung.</p>
-          </div>
+          <h3>24/7 Support</h3>
+          <p>Bantuan cepat via WhatsApp kapan saja Anda butuhkan</p>
+          <a href="#" class="support-link">
+            <i class="bi bi-whatsapp"></i> Chat Sekarang
+          </a>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-</div>
-<div class="container mt-5">
-  <h3 class="text-center mb-4 text-white fw-bold">Galeri PS Kharisma</h3>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="photo-card">
-        <img src="img/tempat2.jpg" alt="Suasana PS" class="img-fluid rounded-4 shadow">
+<section class="gallery-section py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold display-5">Galeri <span class="text-gradient">PS Kharisma</span></h2>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="gallery-item">
+          <img src="img/tempat2.jpg" class="img-fluid" alt="Ruangan PS">
+          <div class="gallery-overlay">
+            <h4>Ruangan Nyaman</h4>
+            <p>Full AC dengan sofa premium</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="photo-card">
-        <img src="img/tempat.jpg" alt="Interior PS Kharisma" class="img-fluid rounded-4 shadow">
+      <div class="col-md-4">
+        <div class="gallery-item">
+          <img src="img/tempat.jpg" class="img-fluid" alt="Perangkat">
+          <div class="gallery-overlay">
+            <h4>Perangkat Lengkap</h4>
+            <p>DualSense & VR Headset</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="photo-card">
-        <img src="img/tempat3.jpg" alt="Tim Kami" class="img-fluid rounded-4 shadow">
+      <div class="col-md-4">
+        <div class="gallery-item">
+          <img src="img/tempat3.jpg" class="img-fluid" alt="Tim">
+          <div class="gallery-overlay">
+            <h4>Tim Profesional</h4>
+            <p>Siap membantu 24/7</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
+<section id="pricing" class="pricing-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold display-5">Harga <span class="text-gradient">Rental</span></h2>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="price-card">
+          <div class="price-header">
+            <h3>Regular</h3>
+            <div class="price"><span>Rp</span>25.000<span>/jam</span></div>
+          </div>
+          <ul class="price-features">
+            <li><i class="bi bi-check-circle"></i> PlayStation 4 Slim</li>
+            <li><i class="bi bi-check-circle"></i> 50+ Game Pilihan</li>
+            <li><i class="bi bi-check-circle"></i> TV 43" Full HD</li>
+            <li><i class="bi bi-check-circle"></i> 1 Controller</li>
+          </ul>
+          <a href="#booking" class="btn btn-outline-primary">Pilih Paket</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="price-card popular">
+          <div class="popular-badge">POPULER</div>
+          <div class="price-header">
+            <h3>Premium</h3>
+            <div class="price"><span>Rp</span>40.000<span>/jam</span></div>
+          </div>
+          <ul class="price-features">
+            <li><i class="bi bi-check-circle"></i> PlayStation 5</li>
+            <li><i class="bi bi-check-circle"></i> 100+ Game Terbaru</li>
+            <li><i class="bi bi-check-circle"></i> TV 55" 4K</li>
+            <li><i class="bi bi-check-circle"></i> 2 DualSense Controller</li>
+            <li><i class="bi bi-check-circle"></i> Free Snack & Minuman</li>
+          </ul>
+          <a href="#booking" class="btn btn-primary">Pilih Paket</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="price-card">
+          <div class="price-header">
+            <h3>VR Experience</h3>
+            <div class="price"><span>Rp</span>60.000<span>/jam</span></div>
+          </div>
+          <ul class="price-features">
+            <li><i class="bi bi-check-circle"></i> PlayStation VR2</li>
+            <li><i class="bi bi-check-circle"></i> 30+ Game VR</li>
+            <li><i class="bi bi-check-circle"></i> TV 55" 4K</li>
+            <li><i class="bi bi-check-circle"></i> Full Body Tracking</li>
+            <li><i class="bi bi-check-circle"></i> Free Snack & Minuman</li>
+          </ul>
+          <a href="#booking" class="btn btn-outline-primary">Pilih Paket</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-section bg-dark text-white py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <h3 class="mb-4">PS Kharisma</h3>
+        <p>Tempat rental PlayStation premium di Yogyakarta dengan pengalaman gaming terbaik.</p>
+        <div class="social-links mt-4">
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4">
+        <h4 class="mb-4">Menu</h4>
+        <ul class="footer-links">
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#features">Fasilitas</a></li>
+          <li><a href="#pricing">Harga</a></li>
+          <li><a href="#booking">Booking</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <h4 class="mb-4">Kontak</h4>
+        <ul class="footer-contact">
+          <li><i class="bi bi-geo-alt"></i> Jl. Contoh No. 123, Yogyakarta</li>
+          <li><i class="bi bi-telephone"></i> 0812-3456-7890</li>
+          <li><i class="bi bi-envelope"></i> info@pskharisma.com</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <h4 class="mb-4">Jam Buka</h4>
+        <ul class="opening-hours">
+          <li>Senin - Jumat: 10:00 - 22:00</li>
+          <li>Sabtu - Minggu: 09:00 - 24:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="mt-5">
+
+    <div class="text-center pt-3">
+      <p class="mb-0">&copy; 2023 PS Kharisma. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
 <style>
-  /* Switch Styles */
-  .theme-switch {
+  :root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --dark-color: #2d3436;
+    --light-color: #f5f6fa;
+    --gradient: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 100px 0;
+    background: var(--gradient);
+    color: white;
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  /* Features Section */
+  .features-section {
+    background: white;
+  }
+
+  .feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    height: 100%;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 30px;
+  }
+
+  .bg-gradient-1 {
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  }
+
+  .bg-gradient-2 {
+    background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);
+  }
+
+  .bg-gradient-3 {
+    background: linear-gradient(135deg, #fd79a8 0%, #fab1a0 100%);
+  }
+
+  .game-badges .badge {
+    background: #f3f3f3;
+    color: var(--dark-color);
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+
+  .specs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .spec-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+  }
+
+  .support-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    color: #fd79a8;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* Gallery Section */
+  .gallery-item {
     position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
   }
 
-  .theme-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  .gallery-item:hover {
+    transform: scale(1.03);
   }
 
-  .slider {
+  .gallery-overlay {
     position: absolute;
-    cursor: pointer;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: 20px;
   }
 
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-
-  input:checked+.slider {
-    background-color: #ffd700;
-  }
-
-  input:checked+.slider:before {
-    transform: translateX(26px);
-  }
-
-  .dark-mode .flip-card-front {
-    background-color: #1f1f1f;
-    color: #fff;
-  }
-
-  .dark-mode .flip-card-back {
-    background-color: #2a2a2a;
-    color: #fff;
-  }
-
-  /* css musik */
-  .btn-3d-music {
-    background: linear-gradient(145deg, #FFD700, #e6be00);
-    color: #111;
-    padding: 16px 40px;
-    font-size: 1.25rem;
-    font-weight: 700;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0 8px 0 #bfa100, 0 8px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease;
-    text-transform: uppercase;
+  /* Pricing Section */
+  .price-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     position: relative;
-    z-index: 1;
+    transition: transform 0.3s ease;
+    height: 100%;
   }
 
-  .btn-3d-music:hover {
-    box-shadow: 0 4px 0 #bfa100, 0 4px 10px rgba(0, 0, 0, 0.4);
-    transform: translateY(2px);
-    background: linear-gradient(145deg, #ffe14c, #f1c40f);
+  .price-card.popular {
+    border: 2px solid var(--primary-color);
   }
 
-  .btn-3d-music:active {
-    transform: translateY(5px);
-    box-shadow: 0 2px 0 #bfa100, 0 2px 5px rgba(0, 0, 0, 0.4);
+  .popular-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
   }
 
-  .btn-3d-music i {
-    font-size: 1.5rem;
+  .price-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
   }
 
-  /* css body */
-  .text-gold {
-    color: #FFD700;
+  .price {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0;
   }
 
-  .bg-gold {
-    background: linear-gradient(135deg, #FFD700, #FFB800);
+  .price span {
+    font-size: 16px;
+    font-weight: normal;
   }
 
-  .btn-gold {
-    background-color: #FFD700;
-    border: none;
-    color: #ffffff;
+  .price-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .price-features li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Booking Section */
+  .booking-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Footer */
+  .footer-section {
+    background: #1a1a1a;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    margin-right: 10px;
     transition: all 0.3s ease;
   }
 
-  .btn-gold:hover {
-    background-color: #ffc107;
-    color: #ffffff;
-    transform: scale(1.05);
+  .social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
   }
 
-  .flip-card {
-    background-color: transparent;
-    perspective: 1000px;
-    height: 280px;
+  .footer-links {
+    list-style: none;
+    padding: 0;
   }
 
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  .footer-links li {
+    margin-bottom: 10px;
   }
 
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+  .footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
   }
 
-  .flip-card-front,
-  .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    backface-visibility: hidden;
-    border-radius: 16px;
+  .footer-links a:hover {
+    color: white;
+  }
+
+  .footer-contact {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-contact li {
+    margin-bottom: 15px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .flip-card-front {
-    z-index: 2;
-  }
-
-  .flip-card-back {
-    transform: rotateY(180deg);
-  }
-
-  .photo-card {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    transform-style: preserve-3d;
-  }
-
-  .photo-card:hover {
-    transform: rotateY(10deg) scale(1.05);
-    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
-  }
-
-  .about-3d-section {
-    perspective: 1000px;
-  }
-
-  .flip-card {
-    background-color: transparent;
-    width: 100%;
-    height: 280px;
-    perspective: 1000px;
-  }
-
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-
-  .flip-card-front,
-  .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    padding: 30px;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    gap: 10px;
   }
 
-  .flip-card-front {
-    color: #fff;
+  .opening-hours {
+    list-style: none;
+    padding: 0;
   }
 
-  .flip-card-back {
-    transform: rotateY(180deg);
+  .opening-hours li {
+    margin-bottom: 10px;
+    color: #aaa;
   }
 </style>
-<script>
-  const audio = document.getElementById('aboutMusic');
-  const toggleBtn = document.getElementById('toggleMusic');
-  const icon = document.getElementById('musicIcon');
 
-  let isPlaying = false;
-
-  toggleBtn.addEventListener('click', () => {
-    if (isPlaying) {
-      audio.pause();
-      icon.classList.remove('bi-pause-fill');
-      icon.classList.add('bi-volume-up-fill');
-      toggleBtn.innerHTML = '<i id="musicIcon" class="bi bi-volume-up-fill me-2"></i> Mainkan Musik';
-    } else {
-      audio.play();
-      icon.classList.remove('bi-volume-up-fill');
-      icon.classList.add('bi-pause-fill');
-      toggleBtn.innerHTML = '<i id="musicIcon" class="bi bi-pause-fill me-2"></i> Jeda Musik';
-    }
-    isPlaying = !isPlaying;
-  });
-</script>
-
-<footer id="footer" class="footer">
-
-  <div class="container footer-top">
-    <div class="row gy-4">
-      <div class="col-lg-4 col-md-6 footer-about">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <span class="sitename">Rental Playstation</span>
-        </a>
-        <div class="footer-contact pt-3">
-          <p>Playstation</p>
-          <p>Yogyakarta</p>
-          <p class="mt-3"><strong>Phone:</strong> <span>+08******</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
-        </div>
-        <div class="social-links d-flex mt-4">
-          <a href=""><i class="bi bi-twitter-x"></i></a>
-          <a href=""><i class="bi bi-facebook"></i></a>
-          <a href=""><i class="bi bi-instagram"></i></a>
-          <a href=""><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Useful Links</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Terms of service</a></li>
-          <li><a href="#">Privacy policy</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Our Services</h4>
-        <ul>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">Product Management</a></li>
-          <li><a href="#">Marketing</a></li>
-          <li><a href="#">Graphic Design</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Hic solutasetp</h4>
-        <ul>
-          <li><a href="#">Molestiae accusamus iure</a></li>
-          <li><a href="#">Excepturi dignissimos</a></li>
-          <li><a href="#">Suscipit distinctio</a></li>
-          <li><a href="#">Dilecta</a></li>
-          <li><a href="#">Sit quas consectetur</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Nobis illum</h4>
-        <ul>
-          <li><a href="#">Ipsam</a></li>
-          <li><a href="#">Laudantium dolorum</a></li>
-          <li><a href="#">Dinera</a></li>
-          <li><a href="#">Trodelas</a></li>
-          <li><a href="#">Flexo</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="container copyright text-center mt-4">
-    <p>© <span>Copyright</span> <strong class="px-1 sitename">-</strong> <span>All Rights Reserved</span></p>
-    <div class="credits">
-      Designed by <a>Faqih</a>
-    </div>
-  </div>
-
-</footer>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<script>
-  const toggle = document.getElementById('modeToggle');
-  const body = document.body;
-
-  toggle.addEventListener('change', function () {
-    body.classList.toggle('dark-mode');
-  });
-</script>
-
-</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"></script>

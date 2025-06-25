@@ -127,16 +127,17 @@
     <!-- Featured Posts Section -->
     <section id="featured-posts" class="featured-posts section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Game</h2>
-        <div><span>Check Our</span> <span class="description-title">Game</span></div>
-      </div><!-- End Section Title -->
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2 class="display-5 fw-bold mb-3">Check Our Game</h2>
+          <p class="lead text-muted">Discover your favorite gaming experiences</p>
+          <div class="divider mx-auto my-4"></div>
+        </div>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="blog-posts-slider swiper init-swiper">
-          <script type="application/json" class="swiper-config">
+          <div class="blog-posts-slider swiper init-swiper">
+            <script type="application/json" class="swiper-config">
             {
               "loop": true,
               "speed": 800,
@@ -162,621 +163,621 @@
             }
           </script>
 
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="blog-post-item">
-                <img src="img/fifa.jpg" alt="Blog Image">
-                <div class="blog-post-content">
-                  <div class="post-meta">
-                    <span><i class="bi bi-person"></i> Julia Parker</span>
-                    <span><i class="bi bi-clock"></i> Jan 15, 2025</span>
-                    <span><i class="bi bi-chat-dots"></i> 6 Comments</span>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="blog-post-item">
+                  <img src="img/fifa.jpg" alt="Blog Image">
+                  <div class="blog-post-content">
+                    <div class="post-meta">
+                      <span><i class="bi bi-person"></i> Julia Parker</span>
+                      <span><i class="bi bi-clock"></i> Jan 15, 2025</span>
+                      <span><i class="bi bi-chat-dots"></i> 6 Comments</span>
+                    </div>
+                    <h2><a href="#">EA SPORTS FC™ 25</a></h2>
+                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce
+                      porttitor metus eget lectus consequat, sit amet feugiat magna vulputate.</p>
+                    <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                   </div>
-                  <h2><a href="#">EA SPORTS FC™ 25</a></h2>
-                  <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce
-                    porttitor metus eget lectus consequat, sit amet feugiat magna vulputate.</p>
-                  <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
-              </div>
-            </div><!-- End slide item -->
+              </div><!-- End slide item -->
 
-            <div class="swiper-slide">
-              <div class="blog-post-item">
-                <img src="img/gta.jpg" alt="Blog Image">
-                <div class="blog-post-content">
-                  <div class="post-meta">
-                    <span><i class="bi bi-person"></i> Mark Wilson</span>
-                    <span><i class="bi bi-clock"></i> Jan 18, 2025</span>
-                    <span><i class="bi bi-chat-dots"></i> 6 Comments</span>
+              <div class="swiper-slide">
+                <div class="blog-post-item">
+                  <img src="img/gta.jpg" alt="Blog Image">
+                  <div class="blog-post-content">
+                    <div class="post-meta">
+                      <span><i class="bi bi-person"></i> Mark Wilson</span>
+                      <span><i class="bi bi-clock"></i> Jan 18, 2025</span>
+                      <span><i class="bi bi-chat-dots"></i> 6 Comments</span>
+                    </div>
+                    <h2><a href="#">Grand Theft Auto IV</a></h2>
+                    <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet adipiscing sem
+                      neque sed ipsum.</p>
+                    <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                   </div>
-                  <h2><a href="#">Grand Theft Auto IV</a></h2>
-                  <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet adipiscing sem
-                    neque sed ipsum.</p>
-                  <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
-              </div>
-            </div><!-- End slide item -->
+              </div><!-- End slide item -->
 
-            <div class="swiper-slide">
-              <div class="blog-post-item">
-                <img src="img/assasin.jpg" alt="Blog Image">
-                <div class="blog-post-content">
-                  <div class="post-meta">
-                    <span><i class="bi bi-person"></i> Sarah Johnson</span>
-                    <span><i class="bi bi-clock"></i> Jan 21, 2025</span>
-                    <span><i class="bi bi-chat-dots"></i> 15 Comments</span>
+              <div class="swiper-slide">
+                <div class="blog-post-item">
+                  <img src="img/assasin.jpg" alt="Blog Image">
+                  <div class="blog-post-content">
+                    <div class="post-meta">
+                      <span><i class="bi bi-person"></i> Sarah Johnson</span>
+                      <span><i class="bi bi-clock"></i> Jan 21, 2025</span>
+                      <span><i class="bi bi-chat-dots"></i> 15 Comments</span>
+                    </div>
+                    <h2><a href="#">Assassin's Creed® Mirrage</a></h2>
+                    <p>Nullam dictum felis eu pede mollis pretium integer tincidunt cras dapibus vivamus elementum
+                      semper nisi.</p>
+                    <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                   </div>
-                  <h2><a href="#">Assassin's Creed® Mirrage</a></h2>
-                  <p>Nullam dictum felis eu pede mollis pretium integer tincidunt cras dapibus vivamus elementum
-                    semper nisi.</p>
-                  <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
-              </div>
-            </div><!-- End slide item -->
+              </div><!-- End slide item -->
 
-            <div class="swiper-slide">
-              <div class="blog-post-item">
-                <img src="img/god.jpg" alt="Blog Image">
-                <div class="blog-post-content">
-                  <div class="post-meta">
-                    <span><i class="bi bi-person"></i> David Brown</span>
-                    <span><i class="bi bi-clock"></i> Jan 24, 2025</span>
-                    <span><i class="bi bi-chat-dots"></i> 10 Comments</span>
+              <div class="swiper-slide">
+                <div class="blog-post-item">
+                  <img src="img/god.jpg" alt="Blog Image">
+                  <div class="blog-post-content">
+                    <div class="post-meta">
+                      <span><i class="bi bi-person"></i> David Brown</span>
+                      <span><i class="bi bi-clock"></i> Jan 24, 2025</span>
+                      <span><i class="bi bi-chat-dots"></i> 10 Comments</span>
+                    </div>
+                    <h2><a href="#">God of War™ Ragnarök</a></h2>
+                    <p>Donec quam felis ultricies nec pellentesque eu pretium quis sem nulla consequat massa quis enim.
+                    </p>
+                    <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                   </div>
-                  <h2><a href="#">God of War™ Ragnarök</a></h2>
-                  <p>Donec quam felis ultricies nec pellentesque eu pretium quis sem nulla consequat massa quis enim.
-                  </p>
-                  <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
-              </div>
-            </div><!-- End slide item -->
+              </div><!-- End slide item -->
 
-            <div class="swiper-slide">
-              <div class="blog-post-item">
-                <img src="img/spider.jpg" alt="Blog Image">
-                <div class="blog-post-content">
-                  <div class="post-meta">
-                    <span><i class="bi bi-person"></i> Emma Davis</span>
-                    <span><i class="bi bi-clock"></i> Jan 27, 2025</span>
-                    <span><i class="bi bi-chat-dots"></i> 6 Comments</span>
+              <div class="swiper-slide">
+                <div class="blog-post-item">
+                  <img src="img/spider.jpg" alt="Blog Image">
+                  <div class="blog-post-content">
+                    <div class="post-meta">
+                      <span><i class="bi bi-person"></i> Emma Davis</span>
+                      <span><i class="bi bi-clock"></i> Jan 27, 2025</span>
+                      <span><i class="bi bi-chat-dots"></i> 6 Comments</span>
+                    </div>
+                    <h2><a href="#">Spider-Man</a></h2>
+                    <p>Aenean leo ligula porttitor eu consequat vitae eleifend ac enim aliquam lorem ante dapibus in
+                      viverra.</p>
+                    <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                   </div>
-                  <h2><a href="#">Spider-Man</a></h2>
-                  <p>Aenean leo ligula porttitor eu consequat vitae eleifend ac enim aliquam lorem ante dapibus in
-                    viverra.</p>
-                  <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
-              </div>
-            </div><!-- End slide item -->
+              </div><!-- End slide item -->
 
-          </div>
-          <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
-            <a href="/tampilan" class="btn btn-lg rounded-pill px-4 custom-gold-btn"
-              style="font-weight: 600; box-shadow: 0 4px 15px rgba(251, 251, 251, 0.4); transition: all 0.3s ease;">
-              More Games
-            </a>
-          </div>
-
-          <style>
-            /* Warna dasar emas */
-            .custom-gold-btn {
-              background-color: #f7ca01;
-              /* emas */
-              color: #1d1d1d;
-              /* teks gelap supaya kontras */
-              border: none;
-            }
-
-            /* Hover warna emas lebih gelap dan efek */
-            .custom-gold-btn:hover {
-              background-color: #f7ca01;
-              /* emas gelap */
-              box-shadow: 0 6px 20px rgba(255, 255, 255, 0.6);
-              transform: scale(1.05);
-              color: #1d1d1d;
-            }
-          </style>
-
-        </div>
-      </div>
-      <!-- Category Section -->
-      <section class="category-section section bg-light py-5">
-        <div class="container">
-          <div class="row mb-4">
-            <div class="col-12 text-center">
-              <h2 class="section-title">Why Choose Our PS5 Rental?</h2>
-              <p class="lead text-muted">Premium gaming experience at affordable prices</p>
             </div>
-          </div>
-
-          <div class="row g-4">
-            <!-- Layanan Unggulan -->
-            <div class="col-lg-4 col-md-6">
-              <div class="category-card card border-0 shadow-sm h-100 hover-effect">
-                <div class="card-img-container overflow-hidden">
-                  <img class="img-fluid card-img-top" src="img/6.jpg" alt="Rental PS5">
-                  <div class="img-overlay d-flex align-items-center justify-content-center">
-                    <span class="overlay-text">Start Gaming Now</span>
-                  </div>
-                </div>
-                <div class="card-body text-center">
-                  <div class="icon-box mb-3">
-                    <i class="fas fa-gamepad fa-3x text-primary"></i>
-                  </div>
-                  <h3 class="h5 card-title">Flexible Rental Plans</h3>
-                  <p class="card-text text-muted">Play your favorite games with affordable daily & weekly rental
-                    options!</p>
-                  <div class="mt-3">
-                    <span class="badge bg-primary me-1">PS5</span>
-                    <span class="badge bg-success me-1">4K</span>
-                    <span class="badge bg-info">120Hz</span>
-                  </div>
-                </div>
-                <div class="card-footer bg-transparent border-0">
-                  <a href="#" class="btn btn-primary w-100 stretched-link">Book Now</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game Populer -->
-            <div class="col-lg-4 col-md-6">
-              <div class="category-card card border-0 shadow-sm h-100 hover-effect">
-                <div class="card-img-container overflow-hidden">
-                  <img class="img-fluid card-img-top" src="img/7.jpg" alt="Game Populer">
-                  <div class="img-overlay d-flex align-items-center justify-content-center">
-                    <span class="overlay-text">Latest Titles</span>
-                  </div>
-                </div>
-                <div class="card-body text-center">
-                  <div class="icon-box mb-3">
-                    <i class="fas fa-trophy fa-3x text-primary"></i>
-                  </div>
-                  <h3 class="h5 card-title">Popular Game Library</h3>
-                  <p class="card-text text-muted">Enjoy the hottest titles including FIFA 23, GTA V, and Tekken 8.</p>
-                  <div class="game-platforms mt-3">
-                    <img src="img/ps5-logo.png" alt="PS5" height="30" class="me-2">
-                    <img src="img/4k-logo.png" alt="4K" height="30" class="me-2">
-                    <img src="img/hdr-logo.png" alt="HDR" height="30">
-                  </div>
-                </div>
-                <div class="card-footer bg-transparent border-0">
-                  <a href="#" class="btn btn-outline-primary w-100 stretched-link">View Games</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Booking Online -->
-            <div class="col-lg-4 col-md-6">
-              <div class="category-card card border-0 shadow-sm h-100 hover-effect">
-                <div class="card-img-container overflow-hidden">
-                  <img class="img-fluid card-img-top" src="img/8.jpg" alt="Booking Online">
-                  <div class="img-overlay d-flex align-items-center justify-content-center">
-                    <span class="overlay-text">Instant Booking</span>
-                  </div>
-                </div>
-                <div class="card-body text-center">
-                  <div class="icon-box mb-3">
-                    <i class="fas fa-calendar-check fa-3x text-primary"></i>
-                  </div>
-                  <h3 class="h5 card-title">Easy Online Booking</h3>
-                  <p class="card-text text-muted">Secure your gaming session in just a few clicks!</p>
-                  <ul class="list-unstyled text-start mt-3">
-                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>24/7 Booking</li>
-                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Instant Confirmation</li>
-                    <li><i class="fas fa-check-circle text-success me-2"></i>Flexible Scheduling</li>
-                  </ul>
-                </div>
-                <div class="card-footer bg-transparent border-0">
-                  <a href="#" class="btn btn-primary w-100 stretched-link">Book Online</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <style>
-        .category-section {
-          position: relative;
-          overflow: hidden;
-        }
-
-        .hover-effect {
-          transition: all 0.3s ease;
-          border-radius: 10px;
-        }
-
-        .hover-effect:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-img-container {
-          height: 200px;
-          overflow: hidden;
-          border-top-left-radius: 10px;
-          border-top-right-radius: 10px;
-        }
-
-        .card-img-top {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-
-        .hover-effect:hover .card-img-top {
-          transform: scale(1.1);
-        }
-
-        .img-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .hover-effect:hover .img-overlay {
-          opacity: 1;
-        }
-
-        .overlay-text {
-          color: white;
-          font-size: 1.5rem;
-          font-weight: bold;
-          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        }
-
-        .icon-box {
-          background: rgba(13, 110, 253, 0.1);
-          width: 80px;
-          height: 80px;
-          margin: -50px auto 20px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          z-index: 1;
-        }
-
-        .section-title {
-          position: relative;
-          display: inline-block;
-          margin-bottom: 20px;
-        }
-
-        .section-title:after {
-          content: '';
-          position: absolute;
-          width: 60px;
-          height: 3px;
-          background: #0d6efd;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      </style>
-      <!-- Game Categories Section -->
-      <section class="game-categories py-5 bg-light">
-        <div class="container">
-          <!-- Section Header -->
-          <div class="section-header text-center mb-5" data-aos="fade-up">
-            <h2 class="display-5 fw-bold mb-3">Explore Game Genres</h2>
-            <p class="lead text-muted">Discover your favorite gaming experiences</p>
-            <div class="divider mx-auto my-4"></div>
-          </div>
-
-          <!-- Game Cards -->
-          <div class="row g-4">
-            <!-- Sports Category -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="genre-card card border-0 shadow-sm h-100 overflow-hidden">
-                <div class="card-img-container position-relative">
-                  <img src="img/nba.jpg" class="card-img-top" alt="Sports Games" loading="lazy">
-                  <div class="genre-badge position-absolute top-0 start-0 bg-danger text-white p-2 px-3">
-                    <i class="bi bi-trophy-fill me-2"></i> Competitive
-                  </div>
-                  <div class="img-overlay d-flex align-items-end p-4">
-                    <a href="/sports-games" class="btn btn-outline-light stretched-link">View Games</a>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="h4 card-title mb-3">Sports Games</h3>
-                  <p class="card-text text-muted mb-4">Experience the thrill of competition with realistic sports
-                    simulations.</p>
-                  <div class="game-tags">
-                    <span class="badge bg-light text-dark me-1 mb-1">FIFA 23</span>
-                    <span class="badge bg-light text-dark me-1 mb-1">NBA 2K24</span>
-                    <span class="badge bg-light text-dark me-1 mb-1">PES 2023</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Action Category -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="genre-card card border-0 shadow-sm h-100 overflow-hidden">
-                <div class="card-img-container position-relative">
-                  <img src="img/horizon.jpg" class="card-img-top" alt="Action Games" loading="lazy">
-                  <div class="genre-badge position-absolute top-0 start-0 bg-warning text-dark p-2 px-3">
-                    <i class="bi bi-controller me-2"></i> Adventure
-                  </div>
-                  <div class="img-overlay d-flex align-items-end p-4">
-                    <a href="/action-games" class="btn btn-outline-light stretched-link">View Games</a>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="h4 card-title mb-3">Action Games</h3>
-                  <p class="card-text text-muted mb-4">Immerse yourself in heart-pounding adventures and epic battles.
-                  </p>
-                  <div class="game-tags">
-                    <span class="badge bg-light text-dark me-1 mb-1">GTA V</span>
-                    <span class="badge bg-light text-dark me-1 mb-1">Call of Duty</span>
-                    <span class="badge bg-light text-dark me-1 mb-1">Spider-Man</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Fighting Category -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="genre-card card border-0 shadow-sm h-100 overflow-hidden">
-                <div class="card-img-container position-relative">
-                  <img src="img/teken.jpg" class="card-img-top" alt="Fighting Games" loading="lazy">
-                  <div class="genre-badge position-absolute top-0 start-0 bg-success text-white p-2 px-3">
-                    <i class="bi bi-joystick me-2"></i> Arcade
-                  </div>
-                  <div class="img-overlay d-flex align-items-end p-4">
-                    <a href="/fighting-games" class="btn btn-outline-light stretched-link">View Games</a>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="h4 card-title mb-3">Fighting Games</h3>
-                  <p class="card-text text-muted mb-4">Test your skills in intense one-on-one combat matches.</p>
-                  <div class="game-tags">
-                    <span class="badge bg-light text-dark me-1 mb-1">Tekken 8</span>
-                    <span class="badge bg-light text-dark me-1 mb-1">Mortal Kombat</span>
-                    <span class="badge bg-light text-dark me-1 mb-1">Street Fighter</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Call to Action Section -->
-      <section class="cta-section py-6 position-relative overflow-hidden">
-        <div class="container position-relative z-index-2">
-          <div class="row justify-content-center text-center" data-aos="zoom-in">
-            <div class="col-lg-8">
-              <h2 class="display-5 fw-bold text-white mb-4">Play Your Favorite Games Now!</h2>
-              <p class="lead text-light mb-5">Experience comfort, affordable prices, and fast service at the best
-                PlayStation rental in your city.</p>
-              <div class="d-flex justify-content-center gap-3">
-                <a href="/pembayaran" class="btn btn-primary btn-lg px-4 py-3 rounded-pill fw-bold">
-                  <i class="bi bi-calendar-check me-2"></i> Book Now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Background with overlay -->
-        <div class="cta-bg"></div>
-      </section>
-
-      <style>
-        /* Custom Styles */
-        .divider {
-          width: 80px;
-          height: 3px;
-          background: linear-gradient(90deg, #0d6efd, #dc3545);
-        }
-
-        .genre-card {
-          transition: all 0.3s ease;
-          border-radius: 12px !important;
-        }
-
-        .genre-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
-        }
-
-        .card-img-container {
-          height: 200px;
-          overflow: hidden;
-        }
-
-        .genre-card .card-img-top {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-
-        .genre-card:hover .card-img-top {
-          transform: scale(1.1);
-        }
-
-        .genre-badge {
-          border-radius: 0 0 12px 0;
-          font-size: 0.85rem;
-          font-weight: 600;
-        }
-
-        .img-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .genre-card:hover .img-overlay {
-          opacity: 1;
-        }
-
-        .game-tags .badge {
-          transition: all 0.2s ease;
-        }
-
-        .game-tags .badge:hover {
-          background-color: #0d6efd !important;
-          color: white !important;
-          transform: translateY(-2px);
-        }
-
-        /* CTA Section Styles */
-        .cta-section {
-          padding: 100px 0;
-          color: white;
-        }
-
-        .cta-bg {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: url('img/gameps5.jpg') no-repeat center center;
-          background-size: cover;
-          z-index: 1;
-        }
-
-        .cta-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, rgba(13, 110, 253, 0.8) 0%, rgba(220, 53, 69, 0.8) 100%);
-          z-index: 2;
-        }
-
-        .z-index-2 {
-          position: relative;
-          z-index: 3;
-        }
-
-        @media (max-width: 768px) {
-          .card-img-container {
-            height: 180px;
-          }
-
-          .cta-section {
-            padding: 60px 0;
-          }
-        }
-      </style>
-
-      <footer id="footer" class="footer">
-
-        <div class="container footer-top">
-          <div class="row gy-4">
-            <div class="col-lg-4 col-md-6 footer-about">
-              <a href="index.html" class="logo d-flex align-items-center">
-                <span class="sitename">Rental Playstation</span>
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
+              <a href="/tampilan" class="btn btn-lg rounded-pill px-4 custom-gold-btn"
+                style="font-weight: 600; box-shadow: 0 4px 15px rgba(251, 251, 251, 0.4); transition: all 0.3s ease;">
+                More Games
               </a>
-              <div class="footer-contact pt-3">
-                <p>Playstation</p>
-                <p>Yogyakarta</p>
-                <p class="mt-3"><strong>Phone:</strong> <span>+08******</span></p>
-                <p><strong>Email:</strong> <span>info@example.com</span></p>
-              </div>
-              <div class="social-links d-flex mt-4">
-                <a href=""><i class="bi bi-twitter-x"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
             </div>
 
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>Useful Links</h4>
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Terms of service</a></li>
-                <li><a href="#">Privacy policy</a></li>
-              </ul>
-            </div>
+            <style>
+              /* Warna dasar emas */
+              .custom-gold-btn {
+                background-color: #f7ca01;
+                /* emas */
+                color: #1d1d1d;
+                /* teks gelap supaya kontras */
+                border: none;
+              }
 
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>Our Services</h4>
-              <ul>
-                <li><a href="#">Web Design</a></li>
-                <li><a href="#">Web Development</a></li>
-                <li><a href="#">Product Management</a></li>
-                <li><a href="#">Marketing</a></li>
-                <li><a href="#">Graphic Design</a></li>
-              </ul>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>Hic solutasetp</h4>
-              <ul>
-                <li><a href="#">Molestiae accusamus iure</a></li>
-                <li><a href="#">Excepturi dignissimos</a></li>
-                <li><a href="#">Suscipit distinctio</a></li>
-                <li><a href="#">Dilecta</a></li>
-                <li><a href="#">Sit quas consectetur</a></li>
-              </ul>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>Nobis illum</h4>
-              <ul>
-                <li><a href="#">Ipsam</a></li>
-                <li><a href="#">Laudantium dolorum</a></li>
-                <li><a href="#">Dinera</a></li>
-                <li><a href="#">Trodelas</a></li>
-                <li><a href="#">Flexo</a></li>
-              </ul>
-            </div>
+              /* Hover warna emas lebih gelap dan efek */
+              .custom-gold-btn:hover {
+                background-color: #f7ca01;
+                /* emas gelap */
+                box-shadow: 0 6px 20px rgba(255, 255, 255, 0.6);
+                transform: scale(1.05);
+                color: #1d1d1d;
+              }
+            </style>
 
           </div>
         </div>
+        <!-- Category Section -->
+        <section class="category-section section bg-light py-5">
+          <div class="container">
+            <div class="row mb-4">
+              <div class="col-12 text-center">
+                <h2 class="section-title">Why Choose Our PS5 Rental?</h2>
+                <p class="lead text-muted">Premium gaming experience at affordable prices</p>
+              </div>
+            </div>
 
-        <div class="container copyright text-center mt-4">
-          <p>© <span>Copyright</span> <strong class="px-1 sitename">-</strong> <span>All Rights Reserved</span></p>
-          <div class="credits">
-            Designed by <a>Faqih</a>
+            <div class="row g-4">
+              <!-- Layanan Unggulan -->
+              <div class="col-lg-4 col-md-6">
+                <div class="category-card card border-0 shadow-sm h-100 hover-effect">
+                  <div class="card-img-container overflow-hidden">
+                    <img class="img-fluid card-img-top" src="img/6.jpg" alt="Rental PS5">
+                    <div class="img-overlay d-flex align-items-center justify-content-center">
+                      <span class="overlay-text">Start Gaming Now</span>
+                    </div>
+                  </div>
+                  <div class="card-body text-center">
+                    <div class="icon-box mb-3">
+                      <i class="fas fa-gamepad fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="h5 card-title">Flexible Rental Plans</h3>
+                    <p class="card-text text-muted">Play your favorite games with affordable daily & weekly rental
+                      options!</p>
+                    <div class="mt-3">
+                      <span class="badge bg-primary me-1">PS5</span>
+                      <span class="badge bg-success me-1">4K</span>
+                      <span class="badge bg-info">120Hz</span>
+                    </div>
+                  </div>
+                  <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-primary w-100 stretched-link">Book Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Game Populer -->
+              <div class="col-lg-4 col-md-6">
+                <div class="category-card card border-0 shadow-sm h-100 hover-effect">
+                  <div class="card-img-container overflow-hidden">
+                    <img class="img-fluid card-img-top" src="img/7.jpg" alt="Game Populer">
+                    <div class="img-overlay d-flex align-items-center justify-content-center">
+                      <span class="overlay-text">Latest Titles</span>
+                    </div>
+                  </div>
+                  <div class="card-body text-center">
+                    <div class="icon-box mb-3">
+                      <i class="fas fa-trophy fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="h5 card-title">Popular Game Library</h3>
+                    <p class="card-text text-muted">Enjoy the hottest titles including FIFA 23, GTA V, and Tekken 8.</p>
+                    <div class="game-platforms mt-3">
+                      <img src="img/ps5-logo.png" alt="PS5" height="30" class="me-2">
+                      <img src="img/4k-logo.png" alt="4K" height="30" class="me-2">
+                      <img src="img/hdr-logo.png" alt="HDR" height="30">
+                    </div>
+                  </div>
+                  <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-outline-primary w-100 stretched-link">View Games</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Booking Online -->
+              <div class="col-lg-4 col-md-6">
+                <div class="category-card card border-0 shadow-sm h-100 hover-effect">
+                  <div class="card-img-container overflow-hidden">
+                    <img class="img-fluid card-img-top" src="img/8.jpg" alt="Booking Online">
+                    <div class="img-overlay d-flex align-items-center justify-content-center">
+                      <span class="overlay-text">Instant Booking</span>
+                    </div>
+                  </div>
+                  <div class="card-body text-center">
+                    <div class="icon-box mb-3">
+                      <i class="fas fa-calendar-check fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="h5 card-title">Easy Online Booking</h3>
+                    <p class="card-text text-muted">Secure your gaming session in just a few clicks!</p>
+                    <ul class="list-unstyled text-start mt-3">
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>24/7 Booking</li>
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Instant Confirmation</li>
+                      <li><i class="fas fa-check-circle text-success me-2"></i>Flexible Scheduling</li>
+                    </ul>
+                  </div>
+                  <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-primary w-100 stretched-link">Book Online</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
 
-      </footer>
+        <style>
+          .category-section {
+            position: relative;
+            overflow: hidden;
+          }
 
-      <!-- Scroll Top -->
-      <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-          class="bi bi-arrow-up-short"></i></a>
+          .hover-effect {
+            transition: all 0.3s ease;
+            border-radius: 10px;
+          }
 
-      <!-- Preloader -->
-      <div id="preloader"></div>
+          .hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+          }
 
-      <!-- Vendor JS Files -->
-      <script src="Blogy/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="Blogy/assets/vendor/php-email-form/validate.js"></script>
-      <script src="Blogy/assets/vendor/aos/aos.js"></script>
-      <script src="Blogy/assets/vendor/swiper/swiper-bundle.min.js"></script>
-      <script src="Blogy/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-      <script src="Blogy/assets/vendor/glightbox/js/glightbox.min.js"></script>
+          .card-img-container {
+            height: 200px;
+            overflow: hidden;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          }
 
-      <!-- Main JS File -->
-      <script src="Blogy/assets/js/main.js"></script>
+          .card-img-top {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+          }
 
-      </body>
+          .hover-effect:hover .card-img-top {
+            transform: scale(1.1);
+          }
 
-      </html>
+          .img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .hover-effect:hover .img-overlay {
+            opacity: 1;
+          }
+
+          .overlay-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+          }
+
+          .icon-box {
+            background: rgba(13, 110, 253, 0.1);
+            width: 80px;
+            height: 80px;
+            margin: -50px auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+          }
+
+          .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+          }
+
+          .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #0d6efd;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        </style>
+        <!-- Game Categories Section -->
+        <section class="game-categories py-5 bg-light">
+          <div class="container">
+            <!-- Section Header -->
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+              <h2 class="display-5 fw-bold mb-3">Explore Game Genres</h2>
+              <p class="lead text-muted">Discover your favorite gaming experiences</p>
+              <div class="divider mx-auto my-4"></div>
+            </div>
+
+            <!-- Game Cards -->
+            <div class="row g-4">
+              <!-- Sports Category -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="genre-card card border-0 shadow-sm h-100 overflow-hidden">
+                  <div class="card-img-container position-relative">
+                    <img src="img/nba.jpg" class="card-img-top" alt="Sports Games" loading="lazy">
+                    <div class="genre-badge position-absolute top-0 start-0 bg-danger text-white p-2 px-3">
+                      <i class="bi bi-trophy-fill me-2"></i> Competitive
+                    </div>
+                    <div class="img-overlay d-flex align-items-end p-4">
+                      <a href="/sports-games" class="btn btn-outline-light stretched-link">View Games</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h3 class="h4 card-title mb-3">Sports Games</h3>
+                    <p class="card-text text-muted mb-4">Experience the thrill of competition with realistic sports
+                      simulations.</p>
+                    <div class="game-tags">
+                      <span class="badge bg-light text-dark me-1 mb-1">FIFA 23</span>
+                      <span class="badge bg-light text-dark me-1 mb-1">NBA 2K24</span>
+                      <span class="badge bg-light text-dark me-1 mb-1">PES 2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Category -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="genre-card card border-0 shadow-sm h-100 overflow-hidden">
+                  <div class="card-img-container position-relative">
+                    <img src="img/horizon.jpg" class="card-img-top" alt="Action Games" loading="lazy">
+                    <div class="genre-badge position-absolute top-0 start-0 bg-warning text-dark p-2 px-3">
+                      <i class="bi bi-controller me-2"></i> Adventure
+                    </div>
+                    <div class="img-overlay d-flex align-items-end p-4">
+                      <a href="/action-games" class="btn btn-outline-light stretched-link">View Games</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h3 class="h4 card-title mb-3">Action Games</h3>
+                    <p class="card-text text-muted mb-4">Immerse yourself in heart-pounding adventures and epic battles.
+                    </p>
+                    <div class="game-tags">
+                      <span class="badge bg-light text-dark me-1 mb-1">GTA V</span>
+                      <span class="badge bg-light text-dark me-1 mb-1">Call of Duty</span>
+                      <span class="badge bg-light text-dark me-1 mb-1">Spider-Man</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fighting Category -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="genre-card card border-0 shadow-sm h-100 overflow-hidden">
+                  <div class="card-img-container position-relative">
+                    <img src="img/teken.jpg" class="card-img-top" alt="Fighting Games" loading="lazy">
+                    <div class="genre-badge position-absolute top-0 start-0 bg-success text-white p-2 px-3">
+                      <i class="bi bi-joystick me-2"></i> Arcade
+                    </div>
+                    <div class="img-overlay d-flex align-items-end p-4">
+                      <a href="/fighting-games" class="btn btn-outline-light stretched-link">View Games</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h3 class="h4 card-title mb-3">Fighting Games</h3>
+                    <p class="card-text text-muted mb-4">Test your skills in intense one-on-one combat matches.</p>
+                    <div class="game-tags">
+                      <span class="badge bg-light text-dark me-1 mb-1">Tekken 8</span>
+                      <span class="badge bg-light text-dark me-1 mb-1">Mortal Kombat</span>
+                      <span class="badge bg-light text-dark me-1 mb-1">Street Fighter</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section py-6 position-relative overflow-hidden">
+          <div class="container position-relative z-index-2">
+            <div class="row justify-content-center text-center" data-aos="zoom-in">
+              <div class="col-lg-8">
+                <h2 class="display-5 fw-bold text-white mb-4">Play Your Favorite Games Now!</h2>
+                <p class="lead text-light mb-5">Experience comfort, affordable prices, and fast service at the best
+                  PlayStation rental in your city.</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="/pembayaran" class="btn btn-primary btn-lg px-4 py-3 rounded-pill fw-bold">
+                    <i class="bi bi-calendar-check me-2"></i> Book Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Background with overlay -->
+          <div class="cta-bg"></div>
+        </section>
+
+        <style>
+          /* Custom Styles */
+          .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #0d6efd, #dc3545);
+          }
+
+          .genre-card {
+            transition: all 0.3s ease;
+            border-radius: 12px !important;
+          }
+
+          .genre-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+          }
+
+          .card-img-container {
+            height: 200px;
+            overflow: hidden;
+          }
+
+          .genre-card .card-img-top {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+          }
+
+          .genre-card:hover .card-img-top {
+            transform: scale(1.1);
+          }
+
+          .genre-badge {
+            border-radius: 0 0 12px 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+          }
+
+          .img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+          }
+
+          .genre-card:hover .img-overlay {
+            opacity: 1;
+          }
+
+          .game-tags .badge {
+            transition: all 0.2s ease;
+          }
+
+          .game-tags .badge:hover {
+            background-color: #0d6efd !important;
+            color: white !important;
+            transform: translateY(-2px);
+          }
+
+          /* CTA Section Styles */
+          .cta-section {
+            padding: 100px 0;
+            color: white;
+          }
+
+          .cta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/gameps5.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
+          }
+
+          .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.8) 0%, rgba(220, 53, 69, 0.8) 100%);
+            z-index: 2;
+          }
+
+          .z-index-2 {
+            position: relative;
+            z-index: 3;
+          }
+
+          @media (max-width: 768px) {
+            .card-img-container {
+              height: 180px;
+            }
+
+            .cta-section {
+              padding: 60px 0;
+            }
+          }
+        </style>
+
+        <footer id="footer" class="footer">
+
+          <div class="container footer-top">
+            <div class="row gy-4">
+              <div class="col-lg-4 col-md-6 footer-about">
+                <a href="index.html" class="logo d-flex align-items-center">
+                  <span class="sitename">Rental Playstation</span>
+                </a>
+                <div class="footer-contact pt-3">
+                  <p>Playstation</p>
+                  <p>Yogyakarta</p>
+                  <p class="mt-3"><strong>Phone:</strong> <span>+08******</span></p>
+                  <p><strong>Email:</strong> <span>info@example.com</span></p>
+                </div>
+                <div class="social-links d-flex mt-4">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Terms of service</a></li>
+                  <li><a href="#">Privacy policy</a></li>
+                </ul>
+              </div>
+
+              <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                  <li><a href="#">Web Design</a></li>
+                  <li><a href="#">Web Development</a></li>
+                  <li><a href="#">Product Management</a></li>
+                  <li><a href="#">Marketing</a></li>
+                  <li><a href="#">Graphic Design</a></li>
+                </ul>
+              </div>
+
+              <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Hic solutasetp</h4>
+                <ul>
+                  <li><a href="#">Molestiae accusamus iure</a></li>
+                  <li><a href="#">Excepturi dignissimos</a></li>
+                  <li><a href="#">Suscipit distinctio</a></li>
+                  <li><a href="#">Dilecta</a></li>
+                  <li><a href="#">Sit quas consectetur</a></li>
+                </ul>
+              </div>
+
+              <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Nobis illum</h4>
+                <ul>
+                  <li><a href="#">Ipsam</a></li>
+                  <li><a href="#">Laudantium dolorum</a></li>
+                  <li><a href="#">Dinera</a></li>
+                  <li><a href="#">Trodelas</a></li>
+                  <li><a href="#">Flexo</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">-</strong> <span>All Rights Reserved</span></p>
+            <div class="credits">
+              Designed by <a>Faqih</a>
+            </div>
+          </div>
+
+        </footer>
+
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Preloader -->
+        <div id="preloader"></div>
+
+        <!-- Vendor JS Files -->
+        <script src="Blogy/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="Blogy/assets/vendor/php-email-form/validate.js"></script>
+        <script src="Blogy/assets/vendor/aos/aos.js"></script>
+        <script src="Blogy/assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="Blogy/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="Blogy/assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+        <!-- Main JS File -->
+        <script src="Blogy/assets/js/main.js"></script>
+
+        </body>
+
+        </html>

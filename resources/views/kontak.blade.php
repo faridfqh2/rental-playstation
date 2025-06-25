@@ -3,7 +3,7 @@
 @section('title', 'Contact - Rental Playstation')
 
 @section('content')
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <main class="main">
 
     <!-- Page Title -->
@@ -68,7 +68,23 @@
       <div class="row">
       <div class="col-lg-12">
         <div class="form-wrapper" data-aos="fade-up" data-aos-delay="400">
-        <form action="{{ route('contact.store') }}" method="post" role="form" class="php-email-form">
+        @if(session('success'))
+      <div class="alert alert-success" id="success-alert">
+        {{ session('success') }}
+      </div>
+      <script>
+        setTimeout(function () {
+        const alertBox = document.getElementById('success-alert');
+        if (alertBox) {
+        alertBox.style.transition = 'opacity 0.5s ease';
+        alertBox.style.opacity = 0;
+        setTimeout(() => alertBox.remove(), 500); // Hapus dari DOM setelah fade out
+        }
+        }, 3000);
+      </script>
+      @endif
+
+        <form action="{{ route('kontak.store') }}" method="post" role="form">
           @csrf
 
           <div class="row">
@@ -111,13 +127,9 @@
               required=""></textarea>
             </div>
           </div>
-          <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-          </div>
+
           <div class="text-center">
-            <button type="submit">Submit Message</button>
+            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
           </div>
 
           </div>
@@ -132,12 +144,6 @@
 
   </main>
   <style>
-    body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
-    padding: 2rem;
-    }
-
     .map-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -175,66 +181,327 @@
     </div>
 
   </body>
-  <footer id="footer" class="footer">
 
-
-    <div class="container footer-top">
-    <div class="row gy-4">
-      <div class="col-lg-4 col-md-6 footer-about">
-      <a href="/" class="logo d-flex align-items-center">
-        <span class="sitename">Rental Playstation</span>
-      </a>
-      <div class="footer-contact pt-3">
-        <p>Jl. Prof. DR. Soepomo Sh No.63, Warungboto, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta
-        55164</p>
-        <p class="mt-3"><strong>Phone:</strong> <span> +082136347300 </span></p>
-        <p><strong>Email:</strong> <span>-</span></p>
-      </div>
-      <div class="social-links d-flex mt-4">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+  <footer class="footer-section bg-dark text-white py-5">
+    <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+      <h3 class="mb-4">PS Kharisma</h3>
+      <p>Tempat rental PlayStation premium di Yogyakarta dengan pengalaman gaming terbaik.</p>
+      <div class="social-links mt-4">
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-whatsapp"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-tiktok"></i></a>
       </div>
       </div>
 
-      <div class="col-lg-2 col-md-3 footer-links">
-      <h4>Useful Links</h4>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Terms of service</a></li>
-        <li><a href="#">Privacy policy</a></li>
+      <div class="col-lg-2 col-md-4">
+      <h4 class="mb-4">Menu</h4>
+      <ul class="footer-links">
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#features">Fasilitas</a></li>
+        <li><a href="#pricing">Harga</a></li>
+        <li><a href="#booking">Booking</a></li>
       </ul>
       </div>
 
-      <div class="col-lg-2 col-md-3 footer-links">
-      <h4>Our Services</h4>
-      <ul>
-        <li><a href="#">Web Design</a></li>
-        <li><a href="#">Web Development</a></li>
-        <li><a href="#">Product Management</a></li>
-        <li><a href="#">Marketing</a></li>
-        <li><a href="#">Graphic Design</a></li>
+      <div class="col-lg-3 col-md-4">
+      <h4 class="mb-4">Kontak</h4>
+      <ul class="footer-contact">
+        <li><i class="bi bi-geo-alt"></i> Jl. Contoh No. 123, Yogyakarta</li>
+        <li><i class="bi bi-telephone"></i> 0812-3456-7890</li>
+        <li><i class="bi bi-envelope"></i> info@pskharisma.com</li>
       </ul>
       </div>
 
-    </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-    <p>© <span>Copyright</span> <strong class="px-1 sitename">Blogy</strong> <span>All Rights Reserved</span></p>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you've purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
+      <div class="col-lg-3 col-md-4">
+      <h4 class="mb-4">Jam Buka</h4>
+      <ul class="opening-hours">
+        <li>Senin - Jumat: 10:00 - 22:00</li>
+        <li>Sabtu - Minggu: 09:00 - 24:00</li>
+      </ul>
+      </div>
     </div>
 
+    <hr class="mt-5">
+
+    <div class="text-center pt-3">
+      <p class="mb-0">&copy; 2023 PS Kharisma. All rights reserved.</p>
+    </div>
+    </div>
   </footer>
+
+  <style>
+    :root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --dark-color: #2d3436;
+    --light-color: #f5f6fa;
+    --gradient: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    }
+
+    /* Hero Section */
+    .hero-section {
+    padding: 100px 0;
+    background: var(--gradient);
+    color: white;
+    }
+
+    .text-gradient {
+    background: linear-gradient(90deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    }
+
+    .floating-animation {
+    animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+    }
+
+    /* Features Section */
+    .features-section {
+    background: white;
+    }
+
+    .feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    height: 100%;
+    }
+
+    .feature-card:hover {
+    transform: translateY(-10px);
+    }
+
+    .feature-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 30px;
+    }
+
+    .bg-gradient-1 {
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    }
+
+    .bg-gradient-2 {
+    background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);
+    }
+
+    .bg-gradient-3 {
+    background: linear-gradient(135deg, #fd79a8 0%, #fab1a0 100%);
+    }
+
+    .game-badges .badge {
+    background: #f3f3f3;
+    color: var(--dark-color);
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    }
+
+    .specs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    }
+
+    .spec-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    }
+
+    .support-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    color: #fd79a8;
+    text-decoration: none;
+    font-weight: 500;
+    }
+
+    /* Gallery Section */
+    .gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+    transform: scale(1.03);
+    }
+
+    .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: 20px;
+    }
+
+    /* Pricing Section */
+    .price-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.3s ease;
+    height: 100%;
+    }
+
+    .price-card.popular {
+    border: 2px solid var(--primary-color);
+    }
+
+    .popular-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    }
+
+    .price-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    }
+
+    .price {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0;
+    }
+
+    .price span {
+    font-size: 16px;
+    font-weight: normal;
+    }
+
+    .price-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    }
+
+    .price-features li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    }
+
+    /* Booking Section */
+    .booking-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Footer */
+    .footer-section {
+    background: #1a1a1a;
+    }
+
+    .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+    }
+
+    .footer-links {
+    list-style: none;
+    padding: 0;
+    }
+
+    .footer-links li {
+    margin-bottom: 10px;
+    }
+
+    .footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+    color: white;
+    }
+
+    .footer-contact {
+    list-style: none;
+    padding: 0;
+    }
+
+    .footer-contact li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    }
+
+    .opening-hours {
+    list-style: none;
+    padding: 0;
+    }
+
+    .opening-hours li {
+    margin-bottom: 10px;
+    color: #aaa;
+    }
+  </style>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i

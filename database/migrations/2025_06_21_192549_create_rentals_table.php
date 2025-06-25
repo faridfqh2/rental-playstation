@@ -15,6 +15,7 @@ class CreateRentalsTable extends Migration
             $table->text('alamat');
             $table->string('metode_pembayaran');
             $table->bigInteger('total_harga');
+            $table->string('midtrans_order_id')->nullable();
             $table->timestamps();
         });
     }

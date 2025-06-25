@@ -13,19 +13,6 @@ use App\Http\Controllers\KirimEmailController;
 use App\Http\Controllers\RentalController;
 
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('blog',[BlogController::class,'index'])->name('blog');
-
-Route::get('/pembayaran', function () {
-    return view('pembayaran');
-});
-
-Route::get('/pembayaran', [OrderController::class, 'pembayaran'])->name('pembayaran');
-
-
 Route::get('/orders/manage', [OrderController::class, 'manage'])->name('orders.manage');
 
 // Route::get('/', [OrderController::class, 'index']);
@@ -47,10 +34,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/', function () {
     return view('home');
-});
-});
 
-// Home route untuk user biasa
+
+
+    //tambah route yang lain didalam sini
+});
 
 Route::get('/schedule', [ScheduleController::class, 'index']);
 Route::get('/jadwal-booking', [ScheduleController::class, 'index']);
@@ -60,8 +48,6 @@ Route::post('/booking/store', [OrderController::class, 'store'])->name('booking.
 
 Route::patch('/orders/{id}/mark-paid', [OrderController::class, 'markAsPaid'])->name('orders.markPaid');
 
-Route::get('/sewa', [RentalController::class, 'index'])->name('rental');
-Route::post('/sewa/store', [RentalController::class, 'store'])->name('sewa.store');
 
 Route::get('/tampilan', function () {
     return view('tampilan');
@@ -80,7 +66,25 @@ Route::get('/admin/blogs/create', [BlogController::class, 'create'])->name('blog
 Route::post('/admin/blogs/store', [BlogController::class, 'store'])->name('blog.store');
 
 Route::get('/kontak', [kirimEmailController::class, 'index'])->name('kontak');
-Route::post('/kontak', [kirimEmailController::class, 'store'])->name('contact.store');   
+Route::post('/kontak', [kirimEmailController::class, 'store'])->name('kontak.store');   
+
+
 
 Route::get('/sewa', [RentalController::class, 'index'])->name('sewa.index');
-Route::post('/sewa/store', [RentalController::class, 'store'])->name('sewa.store');
+Route::post('/sewa', [RentalController::class, 'store'])->name('sewa.store');
+Route::get('/sewa/{id}/checkout', [RentalController::class, 'checkout'])->name('sewa.checkout');
+Route::post('/sewa/{id}/pay', [RentalController::class, 'pay'])->name('sewa.pay');
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('blog',[BlogController::class,'index'])->name('blog');
+
+Route::get('/pembayaran', function () {
+    return view('pembayaran');
+});
+
+Route::get('/pembayaran', [OrderController::class, 'pembayaran'])->name('pembayaran');
+
+});
+
+// Home route untuk user bias

@@ -18,5 +18,6 @@ class Rental extends Model
         'alamat',
         'metode_pembayaran',
         'total_harga',
+        'midtrans_order_id'
     ];
 }
