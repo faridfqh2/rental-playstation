@@ -10,6 +10,7 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\GamesController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\KirimEmailController;
+use App\Http\Controllers\RentalController;
 
 
 Route::get('/about', function () {
@@ -22,9 +23,8 @@ Route::get('/pembayaran', function () {
     return view('pembayaran');
 });
 
-Route::get('/schedule', function () {
-    return view('schedule');
-});
+Route::get('/pembayaran', [OrderController::class, 'pembayaran'])->name('pembayaran');
+
 
 Route::get('/orders/manage', [OrderController::class, 'manage'])->name('orders.manage');
 
@@ -60,6 +60,9 @@ Route::post('/booking/store', [OrderController::class, 'store'])->name('booking.
 
 Route::patch('/orders/{id}/mark-paid', [OrderController::class, 'markAsPaid'])->name('orders.markPaid');
 
+Route::get('/sewa', [RentalController::class, 'index'])->name('rental');
+Route::post('/sewa/store', [RentalController::class, 'store'])->name('sewa.store');
+
 Route::get('/tampilan', function () {
     return view('tampilan');
 })->name('games.index');
@@ -79,4 +82,5 @@ Route::post('/admin/blogs/store', [BlogController::class, 'store'])->name('blog.
 Route::get('/kontak', [kirimEmailController::class, 'index'])->name('kontak');
 Route::post('/kontak', [kirimEmailController::class, 'store'])->name('contact.store');   
 
-
+Route::get('/sewa', [RentalController::class, 'index'])->name('sewa.index');
+Route::post('/sewa/store', [RentalController::class, 'store'])->name('sewa.store');

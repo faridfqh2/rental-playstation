@@ -79,15 +79,28 @@
             <h5 class="card-title text-primary text-center">Form Pemesanan</h5>
             <p class="text-center text-muted">Isi data dengan benar sebelum checkout.</p>
 
-            <form action="/checkout" method="POST">
+            {{-- Alert Success --}}
+            @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ session('success') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      @endif
+
+            {{-- Alert Error --}}
+            @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ session('error') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      @endif
+
+            <form action="{{ url('/checkout') }}" method="POST">
               @csrf
 
               <div class="mb-3">
-                <label for="qty" class="form-label">Durasi Booking</label>
-                <div class="input-group">
-                  <input type="number" name="qty" id="  " class="form-control" placeholder="Contoh: 2" required>
-                  <span class="input-group-text">Jam</span>
-                </div>
+                <label for="qty" class="form-label">Durasi Booking (Jam)</label>
+                <input type="number" name="qty" id="qty" class="form-control" min="1" required>
               </div>
 
               <div class="mb-3">
@@ -100,17 +113,12 @@
                 <input type="time" name="jam_booking" id="jam_booking" class="form-control" required>
               </div>
 
-
-
               <div class="mb-3">
                 <label for="address" class="form-label">Alamat</label>
-                <textarea name="address" id="address" class="form-control" rows="3" placeholder="Alamat lengkap"
-                  required></textarea>
+                <textarea name="address" id="address" class="form-control" rows="3" required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-success w-100">
-                <i class="bi bi-cart-check-fill me-2"></i> Checkout
-              </button>
+              <button type="submit" class="btn btn-success w-100">Checkout</button>
             </form>
 
           </div>
@@ -119,7 +127,34 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
+  <!-- Script Booking Conflict Check -->
+  <script>
+    const bookedSlots = @json($bookedSlots);
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (e) {
+      const tanggal = document.getElementById('tanggal_booking').value;
+      const jam = document.getElementById('jam_booking').value;
+      const qty = parseInt(document.getElementById('qty').value);
+
+      const [startHour, startMinute] = jam.split(':').map(Number);
+      const timesToCheck = [];
+      for (let i = 0; i < qty; i++) {
+        const timeStr = `${String(startHour + i).padStart(2, '0')}:${String(startMinute).padStart(2, '0')}`;
+        timesToCheck.push(timeStr);
+      }
+
+      const conflict = bookedSlots.some(slot =>
+        slot.tanggal === tanggal && timesToCheck.includes(slot.jam)
+      );
+
+      if (conflict) {
+        e.preventDefault();
+        alert('Jadwal bentrok! Silakan pilih jam atau durasi lain.');
+      }
+    });
+  </script>
+  <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

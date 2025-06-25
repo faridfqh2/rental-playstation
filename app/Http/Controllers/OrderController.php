@@ -2,111 +2,121 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
 use Midtrans\Snap;
 use Midtrans\Config;
-use App\Models\Order;
-use Midtrans\checkout;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-   class OrderController extends Controller
+class OrderController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('home');
     }
-   public function checkout(Request $request)
-{
-    $now = Carbon::now();
-    $user = Auth::id();
-    $phone = auth()->user()->phone;
 
-    $request->request->add([
-        'total_price' => $request->qty * 10000,
-        'status' => 'Unpaid',
-       'tanggal_booking' => $request->tanggal_booking,
-        'jam_booking' => $request->jam_booking,
-    ]);
+    public function pembayaran()
+    {
+        $bookedSlots = Order::select('tanggal_booking as tanggal', 'jam_booking as jam', 'qty')
+            ->where('status', '!=', 'Canceled')
+            ->get();
 
-    $order = Order::create([
-        'name' => $user,
-        'phone' => $phone,
-        'tanggal_booking' => $request->tanggal_booking,
-        'jam_booking' => $request->jam_booking,
-        'qty' => $request->qty,
-        'address' => $request->address,
-        'total_price' => $request->qty * 10000,
-    ]);
+        return view('pembayaran', compact('bookedSlots'));
+    }
 
-    // Buat order_id unik untuk Midtrans (string)
-    $order_id_midtrans = 'PS-' . $order->id . '-' . time();
+    public function checkout(Request $request)
+    {
+        $existingBookings = Order::where('tanggal_booking', $request->tanggal_booking)
+            ->where('status', '!=', 'Canceled')
+            ->get();
 
-    \Midtrans\Config::$serverKey = config('midtrans.server_key');
-    \Midtrans\Config::$isProduction = config('midtrans.is_production');
-    \Midtrans\Config::$isSanitized = true;
-    \Midtrans\Config::$is3ds = true;
+        $requestedStart = Carbon::parse($request->jam_booking);
+        $requestedEnd = $requestedStart->copy()->addHours((int) $request->qty);
 
-    $params = [
-        'transaction_details' => [
-            'order_id' => $order_id_midtrans,
-            'gross_amount' => $order->total_price,
-        ],
-        'customer_details' => [
-            'name' => $request->name,
-            'phone' => $request->phone,
+        foreach ($existingBookings as $booking) {
+            $existingStart = Carbon::parse($booking->jam_booking);
+            $existingEnd = $existingStart->copy()->addHours((int) $booking->qty);
+
+            if (
+                $requestedStart->lt($existingEnd) && $requestedEnd->gt($existingStart)
+            ) {
+                return back()->with('error', 'Jadwal bentrok dengan booking lain. Silakan pilih jam atau durasi lain.');
+            }
+        }
+
+        $userId = Auth::id();
+        $user = Auth::user();
+
+        $order = Order::create([
+            'name' => $user->name,
+            'phone' => $user->phone,
             'tanggal_booking' => $request->tanggal_booking,
             'jam_booking' => $request->jam_booking,
-        ],
-    ];
+            'qty' => (int) $request->qty,
+            'address' => $request->address,
+            'total_price' => (int) $request->qty * 10000,
+            'status' => 'Unpaid',
+        ]);
 
-    $snapToken = \Midtrans\Snap::getSnapToken($params);
+        $order_id_midtrans = 'PS-' . $order->id . '-' . time();
 
-    // Simpan order_id Midtrans ke database agar nanti bisa cek callback
-    $order->midtrans_order_id = $order_id_midtrans;
-    $order->save();
+        Config::$serverKey = config('midtrans.server_key');
+        Config::$isProduction = config('midtrans.is_production');
+        Config::$isSanitized = true;
+        Config::$is3ds = true;
 
-    return view('checkout', compact('snapToken', 'order'));
-}
-   public function callback(Request $request)
-{
-    $serverKey = config('midtrans.server_key');
-    $hashed = hash("sha512", $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
+        $params = [
+            'transaction_details' => [
+                'order_id' => $order_id_midtrans,
+                'gross_amount' => $order->total_price,
+            ],
+            'customer_details' => [
+                'name' => $user->name,
+                'phone' => $user->phone,
+            ],
+        ];
 
-    if ($hashed == $request->signature_key) {
-        $order = Order::where('midtrans_order_id', $request->order_id)->first();
+        $snapToken = Snap::getSnapToken($params);
 
-        if (!$order) {
-            return response()->json(['message' => 'Order not found'], 404);
-        }
+        $order->midtrans_order_id = $order_id_midtrans;
+        $order->save();
 
-        if (in_array($request->transaction_status, ['capture', 'settlement'])) {
-            $order->update(['status' => 'Paid']);
-        }
+        return view('checkout', compact('snapToken', 'order'))->with('success', 'Booking berhasil! Silakan lanjutkan pembayaran.');
     }
-}
-    public function getFormattedPriceAttribute()
+
+    public function callback(Request $request)
     {
-        return 'Rp ' . number_format($this->total_price, 0, ',', '.');
+        $serverKey = config('midtrans.server_key');
+        $hashed = hash("sha512", $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
+
+        if ($hashed == $request->signature_key) {
+            $order = Order::where('midtrans_order_id', $request->order_id)->first();
+
+            if ($order && in_array($request->transaction_status, ['capture', 'settlement'])) {
+                $order->update(['status' => 'Paid']);
+            }
+        }
     }
 
-    public function invoice($id){
+    public function invoice($id)
+    {
         $order = Order::find($id);
         return view('invoice', compact('order'));
-        return view('checkout', compact('snapToken', 'order'));
-
     }
+
     public function markAsPaid($id)
-{
-    $order = Order::findOrFail($id);
-    $order->status = 'Paid';
-    $order->save();
+    {
+        $order = Order::findOrFail($id);
+        $order->status = 'Paid';
+        $order->save();
 
-    return redirect()->back()->with('success', 'Status berhasil diperbarui menjadi Paid');
-}
-public function booking($id){
-    $order = Order::findOrFail($id);
-    return view('invoice', compact('order'));
-}
+        return redirect()->back()->with('success', 'Status berhasil diperbarui menjadi Paid');
+    }
 
+    public function booking($id)
+    {
+        $order = Order::findOrFail($id);
+        return view('invoice', compact('order'));
+    }
 }

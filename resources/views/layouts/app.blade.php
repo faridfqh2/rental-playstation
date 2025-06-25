@@ -55,7 +55,7 @@
                             <ul>
                                 <li><a href="{{route('login')}}">Log in</a></li>
                                 <li><a href="/pembayaran">Payment</a></li>
-                                <li><a href="/schedule">Check Schedule</a></li>
+                                <li><a href="/sewa">Rental Playstation</a></li>
                                 <li><a href="search-results.html">Search Results</a></li>
                             </ul>
                         </li>
