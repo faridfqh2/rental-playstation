@@ -18,13 +18,14 @@ class RentalController extends Controller
 
     public function store(Request $request)
     {
-        // Validasi input dari form
+       
         $validated = $request->validate([
+            'nama' => 'required',
+            'email'=> 'required',
             'jumlah_unit' => 'required|integer|min:1',
             'tanggal_mulai' => 'required|date|after_or_equal:today',
             'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
             'alamat' => 'required|string|max:255',
-            'metode_pembayaran' => 'required|string',
             'total_harga' => 'required|integer|min:1',
         ]);
 
@@ -32,7 +33,7 @@ class RentalController extends Controller
         $rental = Rental::create($validated);
 
         // Buat order ID unik untuk Midtrans
-$orderId = 'RENTAL-' . $rental->id . '-' . Str::random(5);
+        $orderId = 'RENTAL-' . $rental->id . '-' . Str::random(5);
 
         // Simpan order ID ke database
         $rental->midtrans_order_id = $orderId;
@@ -40,6 +41,14 @@ $orderId = 'RENTAL-' . $rental->id . '-' . Str::random(5);
 
         // Redirect ke halaman checkout (Snap token di-generate di sana)
         return redirect()->route('sewa.checkout', ['id' => $rental->id]);
+    }
+    public function invoicesewa($id)
+    {
+        $rental = Rental::findOrFail($id);
+        $rental = Rental::with('user')->findOrFail($id);
+
+
+        return view('invoicesewa', compact('rental'));
     }
 
   public function checkout($id)
@@ -86,6 +95,7 @@ $orderId = 'RENTAL-' . $rental->id . '-' . Str::random(5);
             throw $e;
         }
     }
+    
 
     return view('checkoutsewa', compact('rental', 'snapToken'));
 }}

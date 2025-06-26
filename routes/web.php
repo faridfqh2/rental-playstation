@@ -49,6 +49,7 @@ Route::post('/booking/store', [OrderController::class, 'store'])->name('booking.
 Route::patch('/orders/{id}/mark-paid', [OrderController::class, 'markAsPaid'])->name('orders.markPaid');
 
 
+
 Route::get('/tampilan', function () {
     return view('tampilan');
 })->name('games.index');
@@ -69,11 +70,11 @@ Route::get('/kontak', [kirimEmailController::class, 'index'])->name('kontak');
 Route::post('/kontak', [kirimEmailController::class, 'store'])->name('kontak.store');   
 
 
-
 Route::get('/sewa', [RentalController::class, 'index'])->name('sewa.index');
 Route::post('/sewa', [RentalController::class, 'store'])->name('sewa.store');
-Route::get('/sewa/{id}/checkout', [RentalController::class, 'checkout'])->name('sewa.checkout');
-Route::post('/sewa/{id}/pay', [RentalController::class, 'pay'])->name('sewa.pay');
+Route::get('/checkout/{id}', [RentalController::class, 'checkout'])->name('sewa.checkout');
+Route::get('/invoicesewa/{id}', [RentalController::class, 'invoicesewa'])->name('sewa.invoice');
+
 Route::get('/about', function () {
     return view('about');
 });

@@ -51,31 +51,53 @@
                         </div>
                     </div>
                     <div class="card-body p-4">
+
+                        <!-- Tambahan Nama dan Email -->
+                        <!-- Nama Pemesan -->
                         <div class="detail-item">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p class="mb-1 text-muted"><i class="bi bi-box-seam me-2"></i>Jumlah Unit</p>
-                                    <h5 class="mb-0">{{ $rental->jumlah_unit }} Unit</h5>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="mb-1 text-muted"><i class="bi bi-credit-card me-2"></i>Metode Pembayaran
-                                    </p>
-                                    <h5 class="mb-0">{{ ucfirst($rental->metode_pembayaran) }}</h5>
+                                    <p class="mb-1 text-muted"><i class="bi bi-person-circle me-2"></i>Nama Pemesan</p>
+                                    <h5 class="mb-0">{{ $rental->nama }}</h5>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Email -->
                         <div class="detail-item">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p class="mb-1 text-muted"><i class="bi bi-calendar-event me-2"></i>Tanggal Mulai
+                                    <p class="mb-1 text-muted"><i class="bi bi-envelope me-2"></i>Email</p>
+                                    <h5 class="mb-0">{{ $rental->email }}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detail Jumlah Unit -->
+                        <div class="detail-item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="mb-1 text-muted"><i class="bi bi-box-seam me-2"></i>Jumlah Unit
+                                    </p>
+                                    <h5 class="mb-0">{{ $rental->jumlah_unit }} Unit</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detail Tanggal -->
+                        <div class="detail-item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="mb-1 text-muted"><i class="bi bi-calendar-event me-2"></i>Tanggal
+                                        Mulai
                                     </p>
                                     <h5 class="mb-0">
                                         {{ \Carbon\Carbon::parse($rental->tanggal_mulai)->isoFormat('D MMMM YYYY') }}
                                     </h5>
                                 </div>
                                 <div class="col-md-6">
-                                    <p class="mb-1 text-muted"><i class="bi bi-calendar-check me-2"></i>Tanggal Selesai
+                                    <p class="mb-1 text-muted"><i class="bi bi-calendar-check me-2"></i>Tanggal
+                                        Selesai
                                     </p>
                                     <h5 class="mb-0">
                                         {{ \Carbon\Carbon::parse($rental->tanggal_selesai)->isoFormat('D MMMM YYYY') }}
@@ -84,19 +106,23 @@
                             </div>
                         </div>
 
+                        <!-- Alamat -->
                         <div class="detail-item">
                             <p class="mb-1 text-muted"><i class="bi bi-geo-alt me-2"></i>Alamat Pengiriman</p>
                             <h5 class="mb-0">{{ $rental->alamat }}</h5>
                         </div>
 
+                        <!-- Total Harga -->
                         <div class="detail-item bg-light p-3 rounded mt-4">
                             <div class="d-flex justify-content-between align-items-center">
                                 <p class="mb-0 text-muted"><i class="bi bi-cash-stack me-2"></i>Total Harga</p>
-                                <h4 class="mb-0 total-price">Rp {{ number_format($rental->total_harga, 0, ',', '.') }}
+                                <h4 class="mb-0 total-price">Rp
+                                    {{ number_format($rental->total_harga, 0, ',', '.') }}
                                 </h4>
                             </div>
                         </div>
 
+                        <!-- Tombol -->
                         <div class="d-flex justify-content-between mt-5">
                             <a href="{{ route('sewa.index') }}" class="btn btn-outline-secondary px-4">
                                 <i class="bi bi-arrow-left me-2"></i>Kembali
@@ -105,24 +131,32 @@
                                 <i class="bi bi-lock-fill me-2"></i>Konfirmasi & Bayar Sekarang
                             </button>
                         </div>
-                    </div>
-                </div>
 
-                <div class="alert alert-info mt-4">
-                    <i class="bi bi-info-circle-fill me-2"></i>
-                    <strong>Perhatian:</strong> Pembayaran harus diselesaikan dalam waktu 1x24 jam setelah pemesanan.
+                        <!-- Info -->
+                        <div class="alert alert-info mt-4">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <strong>Perhatian:</strong> Pembayaran harus diselesaikan dalam waktu 1x24 jam
+                            setelah
+                            pemesanan.
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Midtrans Snap JS -->
     <script src="https://app.sandbox.midtrans.com/snap/snap.js"
         data-client-key="{{ config('midtrans.client_key') }}"></script>
     <script>
         document.getElementById('pay-button').addEventListener('click', function () {
             snap.pay('{{ $snapToken }}', {
                 onSuccess: function (result) {
+                    // Ambil ID rental dari server-side dan masukkan ke JS
+                    const rentalId = "{{ $rental->id }}";
                     alert("Pembayaran berhasil!");
-                    window.location.href = "{{ route('sewa.index') }}";
+                    window.location.href = "/invoicesewa/" + rentalId;
                 },
                 onPending: function (result) {
                     alert("Pembayaran tertunda.");
@@ -136,6 +170,7 @@
             });
         });
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

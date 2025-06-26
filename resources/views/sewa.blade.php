@@ -166,6 +166,18 @@
                                 <div class="form-text">Harga per unit: Rp30.000/hari</div>
                             </div>
 
+                            <div class="mb-4">
+                                <label for="nama" class="form-label">Nama Lengkap</label>
+                                <input type="text" id="nama" name="nama" class="form-control" required
+                                    placeholder="Masukkan nama lengkap">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" required
+                                    placeholder="Masukkan alamat email">
+                            </div>
+
                             <div class="row mb-4">
                                 <div class="col-md-6 mb-3 mb-md-0">
                                     <label for="tanggal_mulai" class="form-label">Tanggal Mulai</label>
@@ -179,20 +191,11 @@
                                 </div>
                             </div>
 
+
                             <div class="mb-4">
                                 <label for="alamat" class="form-label">Alamat Lengkap</label>
                                 <textarea id="alamat" name="alamat" class="form-control" rows="3" required
                                     placeholder="Masukkan alamat lengkap pengiriman"></textarea>
-                            </div>
-
-                            <div class="mb-4">
-                                <label for="metode_pembayaran" class="form-label">Metode Pembayaran</label>
-                                <select id="metode_pembayaran" name="metode_pembayaran" class="form-select" required>
-                                    <option value="" disabled selected>-- Pilih Metode Pembayaran --</option>
-                                    <option value="COD">Cash On Delivery (COD)</option>
-                                    <option value="Transfer Bank">Transfer Bank</option>
-                                    <option value="E-Wallet">E-Wallet (Dana/OVO/Gopay)</option>
-                                </select>
                             </div>
 
                             <div class="mb-4">

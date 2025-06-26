@@ -16,8 +16,14 @@ class Rental extends Model
         'tanggal_mulai',
         'tanggal_selesai',
         'alamat',
-        'metode_pembayaran',
         'total_harga',
-        'midtrans_order_id'
+        'midtrans_order_id',
+        'nama',
+        'email',
     ];
+   public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

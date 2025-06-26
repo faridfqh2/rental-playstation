@@ -9,11 +9,12 @@ class CreateRentalsTable extends Migration
     {
    Schema::create('rentals', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('email')->nullable();
             $table->integer('jumlah_unit');
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai');
             $table->text('alamat');
-            $table->string('metode_pembayaran');
             $table->bigInteger('total_harga');
             $table->string('midtrans_order_id')->nullable();
             $table->timestamps();
