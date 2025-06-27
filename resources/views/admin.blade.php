@@ -64,11 +64,11 @@
                             Dashboard
                         </a>
                         <div class="sb-sidenav-menu-heading">Addons</div>
-                        <a class="nav-link" href="{{ url('charts') }}">
+                        <a class="nav-link" href="{{ url('admin.charts') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Charts
                         </a>
-                        <a class="nav-link" href="{{ url('tables') }}">
+                        <a class="nav-link" href="{{ url('admin/orderlist') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tables
                         </a>
@@ -81,6 +81,11 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-gamepad"></i></div>
                             Update Game
                         </a>
+                        <a class="nav-link" href="{{ route('admin.sewa') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-cart-plus"></i></div>
+                            Sewa Rental
+                        </a>
+
 
                     </div>
                 </div>
@@ -237,6 +242,7 @@
             }
         });
     </script>
+    @stack('scripts')
 </body>
 
 </html>

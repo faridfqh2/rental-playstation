@@ -86,6 +86,20 @@ Route::get('/pembayaran', function () {
 
 Route::get('/pembayaran', [OrderController::class, 'pembayaran'])->name('pembayaran');
 
+Route::get('admin/orderlist', [AdminController::class, 'orderList'])->name('orders.index');
+
+
+Route::get('/orders/{id}/edit', [AdminController::class, 'edit'])->name('orders.edit');
+Route::put('/orders/{id}', [AdminController::class, 'update'])->name('orders.update');
+Route::delete('/orders/{id}', [AdminController::class, 'destroy'])->name('orders.destroy');
+
+Route::get('admin.charts', [AdminController::class, 'charts'])->name('admin.charts');
+
+Route::get('/admin/sewa', [AdminController::class, 'sewaadminindex'])->name('admin.sewa');
+Route::get('/admin/sewa/{id}/edit', [AdminController::class, 'edit'])->name('sewa.edit');
+Route::put('/admin/sewa/{id}', [AdminController::class, 'update'])->name('sewa.update');
+Route::delete('/admin/sewa/{id}', [AdminController::class, 'destroy'])->name('sewa.destroy');
+
 });
 
 // Home route untuk user bias

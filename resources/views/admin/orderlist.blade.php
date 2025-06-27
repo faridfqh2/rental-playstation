@@ -1,0 +1,66 @@
+@extends('layouts.admin') {{-- Pastikan ini sesuai layout yang kamu gunakan --}}
+
+@section('title', 'Order List')
+
+@section('content')
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Order List</h1>
+
+    @if (session('success'))
+        <div class="alert alert-success mt-2">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Order List
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>No. HP</th>
+                        <th>Jumlah (Jam)</th>
+                        <th>Alamat</th>
+                        <th>Total Harga</th>
+                        <th>Status</th>
+                        <th>Tanggal</th>
+                        <th>Aksi</th> {{-- Tambahkan kolom aksi --}}
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($order as $item)
+                        <tr>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->phone }}</td>
+                            <td>{{ $item->qty }}</td>
+                            <td>{{ $item->address }}</td>
+                            <td>Rp {{ number_format($item->total_price, 0, ',', '.') }}</td>
+                            <td>
+                                @if ($item->status == 'Paid')
+                                    <span class="badge bg-success">Paid</span>
+                                @else
+                                    <form method="POST" action="{{ route('orders.markPaid', $item->id) }}">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="btn btn-sm btn-warning">Mark as Paid</button>
+                                    </form>
+                                @endif
+                            </td>
+                            <td>{{ $item->created_at->format('d-m-Y H:i') }}</td>
+                            <td>
+                                <a href="{{ route('orders.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                <form action="{{ route('orders.destroy', $item->id) }}" method="POST"
+                                    style="display:inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Yakin ingin menghapus order ini?')">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>

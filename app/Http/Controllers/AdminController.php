@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Rental;
 use Illuminate\Http\Request;
 use App\Models\Order; // pastikan model Order sudah dibuat dan sesuai
 
@@ -34,4 +35,61 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'Order marked as Paid.');
     }
+    public function orderList()
+{
+    $order = Order::orderBy('id', 'desc')->get(); // tanpa paginate supaya semua tampil
+    return view('admin.orderlist', compact('order'));
+}
+    public function sewaadminindex()
+    {
+        $rentals = Rental::orderBy('created_at', 'desc')->get();
+        return view('admin.sewa', compact('rentals'));
+    }
+
+public function edit($id)
+{
+    $rental = Rental::findOrFail($id);
+    return view('admin.sewa_edit', compact('rental'));
+}
+
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'nama' => 'required',
+        'email' => 'required',
+        'jumlah_unit' => 'required|integer|min:1',
+        'tanggal_mulai' => 'required|date',
+        'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
+        'alamat' => 'required',
+    ]);
+
+    $rental = Rental::findOrFail($id);
+    $rental->update($request->all());
+
+    return redirect()->route('admin.sewa')->with('success', 'Data berhasil diperbarui');
+}
+
+public function destroy($id)
+{
+    $rental = Rental::findOrFail($id);
+    $rental->delete();
+
+    return redirect()->route('admin.sewa')->with('success', 'Data berhasil dihapus');
+}
+
+public function charts()
+{
+    $chartData = \App\Models\Order::selectRaw('DATE(created_at) as date, SUM(total_price) as total')
+        ->groupBy('date')
+        ->orderBy('date')
+        ->get();
+
+    $labels = $chartData->pluck('date');   // ['2025-06-25', '2025-06-26']
+    $data = $chartData->pluck('total');    // [100000, 200000]
+
+    return view('admin.charts', compact('labels', 'data'));
+}
+
+
+
 }
