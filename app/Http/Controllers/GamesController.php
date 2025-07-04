@@ -10,12 +10,12 @@ class GamesController extends Controller
     public function index()
     {
                $games = Game::orderBy("created_at", "desc")->paginate(50); // Ambil data dengan pagination
-        return view('games', compact('games')); // Pastikan $games dikirim ke view
+        return view('game.games', compact('games')); // Pastikan $games dikirim ke view
     }
 public function tampilkanTampilan()
 {
     $games = Game::orderBy("created_at", "desc")->paginate(50);  // ambil data game
-    return view('tampilan', compact('games')); // kirim $games ke view tampilan
+    return view('game.tampilan', compact('games')); // kirim $games ke view tampilan
 }
 
     public function create()

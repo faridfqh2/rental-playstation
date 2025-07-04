@@ -4,11 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Proses Pembayaran</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
   <style>
@@ -55,6 +51,47 @@
       font-weight: bold;
       color: #007bff;
     }
+
+    /* Style tampilan berhasil kecil */
+    #success-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .success-box {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .success-box i {
+      font-size: 3.5rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
   </style>
 </head>
 
@@ -77,7 +114,6 @@
               <tr>
                 <th>Nama</th>
                 <td>{{ auth()->user()->name }}</td>
-
               </tr>
               <tr>
                 <th>No Telp</th>
@@ -106,6 +142,7 @@
             </table>
           </div>
         </div>
+
         @if($order->status === 'paid')
       <script>
         window.location.href = "/invoice/{{ $order->id }}";
@@ -121,34 +158,46 @@
     </div>
   </div>
 
+  <!-- Tampilan pembayaran berhasil -->
+  <div id="success-screen" class="d-none">
+    <div class="success-box">
+      <i class="bi bi-check-circle-fill text-success"></i>
+      <h4 class="mt-3 text-success">Pembayaran Berhasil!</h4>
+      <p class="text-muted">Anda akan diarahkan ke halaman invoice...</p>
+    </div>
+  </div>
+
   <!-- Midtrans Snap -->
   <script src="https://app.sandbox.midtrans.com/snap/snap.js"
     data-client-key="{{ config('midtrans.client_key') }}"></script>
   <script>
     const orderId = "{{ $order->id }}";
-  </script>
-  <script>
+
     document.getElementById('pay-button').addEventListener('click', function () {
       snap.pay('{{ $snapToken }}', {
         onSuccess: function (result) {
-          alert("Pembayaran berhasil!");
-          window.location.href = "/invoice/" + orderId;
+          // Tampilkan kotak sukses
+          document.getElementById('success-screen').classList.remove('d-none');
+
+          // Redirect ke invoice setelah 3 detik
+          setTimeout(() => {
+            window.location.href = "/invoice/" + orderId;
+          }, 3000);
         },
         onPending: function (result) {
           alert("Menunggu pembayaran.");
         },
         onError: function (result) {
-          alert("Terjadi kesalahan pembayaran.");
+          alert("Terjadi kesalahan saat pembayaran.");
         },
         onClose: function () {
-          alert("Kamu menutup pembayaran sebelum selesai.");
+          alert("Kamu menutup jendela pembayaran.");
         }
       });
     });
   </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<!-- Bootstrap JS Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

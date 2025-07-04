@@ -65,6 +65,10 @@ Route::get('/tampilan', [GamesController::class, 'tampilkanTampilan'])->name('ta
 Route::get('/blog/admin', [BlogController::class, 'blogAdmin'])->name('blog.admin');
 Route::get('/admin/blogs/create', [BlogController::class, 'create'])->name('blog.create');
 Route::post('/admin/blogs/store', [BlogController::class, 'store'])->name('blog.store');
+Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
+Route::delete('/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
 
 Route::get('/kontak', [kirimEmailController::class, 'index'])->name('kontak');
 Route::post('/kontak', [kirimEmailController::class, 'store'])->name('kontak.store');   
@@ -102,4 +106,4 @@ Route::delete('/admin/sewa/{id}', [AdminController::class, 'destroy'])->name('se
 
 });
 
-// Home route untuk user bias
+

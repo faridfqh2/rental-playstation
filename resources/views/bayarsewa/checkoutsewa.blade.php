@@ -7,6 +7,7 @@
     <title>Checkout Penyewaan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <style>
         .card {
             border-radius: 15px;
@@ -36,6 +37,47 @@
             padding: 10px 25px;
             font-weight: 600;
         }
+
+        /* Style tampilan berhasil kecil */
+        #success-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .success-box {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem 3rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .success-box i {
+            font-size: 3.5rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 
@@ -51,9 +93,6 @@
                         </div>
                     </div>
                     <div class="card-body p-4">
-
-                        <!-- Tambahan Nama dan Email -->
-                        <!-- Nama Pemesan -->
                         <div class="detail-item">
                             <div class="row">
                                 <div class="col-md-6">
@@ -63,7 +102,6 @@
                             </div>
                         </div>
 
-                        <!-- Email -->
                         <div class="detail-item">
                             <div class="row">
                                 <div class="col-md-6">
@@ -73,31 +111,26 @@
                             </div>
                         </div>
 
-                        <!-- Detail Jumlah Unit -->
                         <div class="detail-item">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p class="mb-1 text-muted"><i class="bi bi-box-seam me-2"></i>Jumlah Unit
-                                    </p>
+                                    <p class="mb-1 text-muted"><i class="bi bi-box-seam me-2"></i>Jumlah Unit</p>
                                     <h5 class="mb-0">{{ $rental->jumlah_unit }} Unit</h5>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Detail Tanggal -->
                         <div class="detail-item">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p class="mb-1 text-muted"><i class="bi bi-calendar-event me-2"></i>Tanggal
-                                        Mulai
+                                    <p class="mb-1 text-muted"><i class="bi bi-calendar-event me-2"></i>Tanggal Mulai
                                     </p>
                                     <h5 class="mb-0">
                                         {{ \Carbon\Carbon::parse($rental->tanggal_mulai)->isoFormat('D MMMM YYYY') }}
                                     </h5>
                                 </div>
                                 <div class="col-md-6">
-                                    <p class="mb-1 text-muted"><i class="bi bi-calendar-check me-2"></i>Tanggal
-                                        Selesai
+                                    <p class="mb-1 text-muted"><i class="bi bi-calendar-check me-2"></i>Tanggal Selesai
                                     </p>
                                     <h5 class="mb-0">
                                         {{ \Carbon\Carbon::parse($rental->tanggal_selesai)->isoFormat('D MMMM YYYY') }}
@@ -106,23 +139,19 @@
                             </div>
                         </div>
 
-                        <!-- Alamat -->
                         <div class="detail-item">
                             <p class="mb-1 text-muted"><i class="bi bi-geo-alt me-2"></i>Alamat Pengiriman</p>
                             <h5 class="mb-0">{{ $rental->alamat }}</h5>
                         </div>
 
-                        <!-- Total Harga -->
                         <div class="detail-item bg-light p-3 rounded mt-4">
                             <div class="d-flex justify-content-between align-items-center">
                                 <p class="mb-0 text-muted"><i class="bi bi-cash-stack me-2"></i>Total Harga</p>
-                                <h4 class="mb-0 total-price">Rp
-                                    {{ number_format($rental->total_harga, 0, ',', '.') }}
+                                <h4 class="mb-0 total-price">Rp {{ number_format($rental->total_harga, 0, ',', '.') }}
                                 </h4>
                             </div>
                         </div>
 
-                        <!-- Tombol -->
                         <div class="d-flex justify-content-between mt-5">
                             <a href="{{ route('sewa.index') }}" class="btn btn-outline-secondary px-4">
                                 <i class="bi bi-arrow-left me-2"></i>Kembali
@@ -132,31 +161,40 @@
                             </button>
                         </div>
 
-                        <!-- Info -->
                         <div class="alert alert-info mt-4">
                             <i class="bi bi-info-circle-fill me-2"></i>
-                            <strong>Perhatian:</strong> Pembayaran harus diselesaikan dalam waktu 1x24 jam
-                            setelah
+                            <strong>Perhatian:</strong> Pembayaran harus diselesaikan dalam waktu 1x24 jam setelah
                             pemesanan.
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Midtrans Snap JS -->
+    <!-- Tampilan Pembayaran Berhasil -->
+    <div id="success-screen" class="d-none">
+        <div class="success-box">
+            <i class="bi bi-check-circle-fill text-success"></i>
+            <h4 class="mt-3 text-success">Pembayaran Berhasil!</h4>
+            <p class="text-muted">Anda akan diarahkan ke halaman invoice dalam beberapa detik...</p>
+        </div>
+    </div>
+
+    <!-- Midtrans Snap -->
     <script src="https://app.sandbox.midtrans.com/snap/snap.js"
         data-client-key="{{ config('midtrans.client_key') }}"></script>
     <script>
         document.getElementById('pay-button').addEventListener('click', function () {
             snap.pay('{{ $snapToken }}', {
                 onSuccess: function (result) {
-                    // Ambil ID rental dari server-side dan masukkan ke JS
-                    const rentalId = "{{ $rental->id }}";
-                    alert("Pembayaran berhasil!");
-                    window.location.href = "/invoicesewa/" + rentalId;
+                    // Tampilkan form berhasil
+                    document.getElementById('success-screen').classList.remove('d-none');
+
+                    // Redirect ke invoice setelah 3 detik
+                    setTimeout(function () {
+                        window.location.href = "/invoicesewa/{{ $rental->id }}";
+                    }, 3000);
                 },
                 onPending: function (result) {
                     alert("Pembayaran tertunda.");

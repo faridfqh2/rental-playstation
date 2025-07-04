@@ -13,7 +13,7 @@ class RentalController extends Controller
 {
     public function index()
     {
-        return view('sewa'); // form penyewaan
+        return view('bayarsewa.sewa'); // form penyewaan
     }
 
     public function store(Request $request)
@@ -48,7 +48,7 @@ class RentalController extends Controller
         $rental = Rental::with('user')->findOrFail($id);
 
 
-        return view('invoicesewa', compact('rental'));
+        return view('bayarsewa.invoicesewa', compact('rental'));
     }
 
   public function checkout($id)
@@ -97,5 +97,5 @@ class RentalController extends Controller
     }
     
 
-    return view('checkoutsewa', compact('rental', 'snapToken'));
+    return view('bayarsewa.checkoutsewa', compact('rental', 'snapToken'));
 }}

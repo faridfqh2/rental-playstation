@@ -70,7 +70,7 @@
                         </a>
                         <a class="nav-link" href="{{ url('admin/orderlist') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tables
+                            Order
                         </a>
                         <a class="nav-link" href="{{ route('blog.admin') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-pen"></i></div>

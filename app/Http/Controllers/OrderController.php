@@ -11,10 +11,7 @@ use Midtrans\Config;
 
 class OrderController extends Controller
 {
-    public function index()
-    {
-        return view('home');
-    }
+
 
     public function pembayaran()
     {
@@ -22,7 +19,7 @@ class OrderController extends Controller
             ->where('status', '!=', 'Canceled')
             ->get();
 
-        return view('pembayaran', compact('bookedSlots'));
+        return view('bayarbooking.pembayaran', compact('bookedSlots'));
     }
 
     public function checkout(Request $request)
@@ -82,7 +79,7 @@ class OrderController extends Controller
         $order->midtrans_order_id = $order_id_midtrans;
         $order->save();
 
-        return view('checkout', compact('snapToken', 'order'))->with('success', 'Booking berhasil! Silakan lanjutkan pembayaran.');
+        return view('bayarbooking.checkout', compact('snapToken', 'order'))->with('success', 'Booking berhasil! Silakan lanjutkan pembayaran.');
     }
 
     public function callback(Request $request)
@@ -102,7 +99,7 @@ class OrderController extends Controller
     public function invoice($id)
     {
         $order = Order::find($id);
-        return view('invoice', compact('order'));
+        return view('bayarbooking.invoice', compact('order'));
     }
 
     public function markAsPaid($id)
@@ -117,6 +114,6 @@ class OrderController extends Controller
     public function booking($id)
     {
         $order = Order::findOrFail($id);
-        return view('invoice', compact('order'));
+        return view('bayarbooking.invoice', compact('order'));
     }
 }
