@@ -307,6 +307,10 @@
 
         <button class="btn-print" onclick="window.print()">Cetak Invoice</button>
 
+        <a href="/" class="btn btn-outline-secondary mb-4">
+            <i class="bi bi-arrow-left-circle me-2"></i> Kembali ke Menu
+        </a>
+
         <div class="footer-note">
             Terima kasih telah menggunakan layanan kami. Silakan hubungi kami jika Anda memiliki pertanyaan.
         </div>

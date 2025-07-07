@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Rental PlayStation</title>
 
-    <!-- Bootstrap CSS via CDN -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha512-m6JZ8uK2PUjIYXPGMdGntTRbvlKppAfkKf9Wr7ESxFg/6yG9SmhD6z3lAonGIdVL1GgON3zwghMNvIFIGK5XUg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
     <style>
+        /* === Custom Styles === */
         :root {
             --primary-color: #2a52be;
             --primary-dark: #1a3a8a;
@@ -40,7 +41,6 @@
             border: none;
             border-radius: var(--border-radius);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -54,14 +54,12 @@
             color: white;
             padding: 1.75rem;
             text-align: center;
-            border-bottom: none;
         }
 
         .card-title {
             font-weight: 800;
-            margin: 0;
             font-size: 1.9rem;
-            letter-spacing: 0.5px;
+            margin: 0;
         }
 
         .card-img-top {
@@ -99,7 +97,6 @@
             border-radius: 8px;
             padding: 0.75rem 1rem;
             border: 1px solid #dee2e6;
-            transition: all 0.3s;
         }
 
         .form-control:focus,
@@ -133,7 +130,6 @@
         .total-price-label {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--secondary-color);
             margin-bottom: 0.5rem;
         }
 
@@ -196,24 +192,27 @@
 <body>
     <div class="container rental-container">
         <div class="card">
+            <!-- Header -->
             <div class="card-header">
                 <h1 class="card-title">Sewa PlayStation</h1>
             </div>
+
+            <!-- Image -->
             <img src="{{ asset('img/stik.jpg') }}" class="card-img-top" alt="PlayStation Controller">
 
+            <!-- Form Body -->
             <div class="card-body">
                 <div class="text-center mb-4">
-                    <span class="ps-badge">
-                        <i class="bi bi-controller me-1"></i> Premium Gaming Experience
-                    </span>
+                    <span class="ps-badge"><i class="bi bi-controller me-1"></i> Premium Gaming Experience</span>
                     <h3 class="mb-2">Formulir Penyewaan</h3>
                     <p class="hero-text">Lengkapi data berikut untuk memulai penyewaan PlayStation</p>
                 </div>
 
+                <!-- Form Start -->
                 <form action="{{ route('sewa.store') }}" method="POST">
                     @csrf
 
-                    <!-- Rental Details Section -->
+                    <!-- Detail Penyewaan -->
                     <div class="form-section">
                         <h5 class="section-title">Detail Penyewaan</h5>
                         <div class="row">
@@ -223,13 +222,11 @@
                                     placeholder="Contoh: 2" min="1">
                                 <div class="form-text">Harga per unit: Rp30.000/hari</div>
                             </div>
-
                             <div class="col-md-6 mb-3">
                                 <label for="tanggal_mulai" class="form-label">Tanggal Mulai</label>
                                 <input type="date" id="tanggal_mulai" name="tanggal_mulai" class="form-control"
                                     required>
                             </div>
-
                             <div class="col-md-6 mb-3">
                                 <label for="tanggal_selesai" class="form-label">Tanggal Selesai</label>
                                 <input type="date" id="tanggal_selesai" name="tanggal_selesai" class="form-control"
@@ -238,7 +235,7 @@
                         </div>
                     </div>
 
-                    <!-- Personal Information Section -->
+                    <!-- Data Pribadi -->
                     <div class="form-section">
                         <h5 class="section-title">Data Pribadi</h5>
                         <div class="row">
@@ -247,14 +244,12 @@
                                 <input type="text" id="nama" name="nama" class="form-control" required
                                     placeholder="Nama lengkap Anda">
                             </div>
-
                             <div class="col-md-6 mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" id="email" name="email" class="form-control" required
                                     placeholder="email@contoh.com">
                             </div>
                         </div>
-
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat Lengkap</label>
                             <textarea id="alamat" name="alamat" class="form-control" rows="3" required
@@ -262,7 +257,7 @@
                         </div>
                     </div>
 
-                    <!-- Price Summary -->
+                    <!-- Ringkasan Harga -->
                     <div class="total-price-container text-center">
                         <div class="total-price-label">Total Biaya Sewa</div>
                         <div class="total-price">
@@ -271,6 +266,7 @@
                         </div>
                     </div>
 
+                    <!-- Tombol Submit -->
                     <button type="submit" class="btn btn-primary w-100 py-3">
                         <i class="bi bi-cart-check-fill me-2"></i> Konfirmasi Penyewaan
                     </button>
@@ -284,7 +280,7 @@
         integrity="sha512-Rd8Cy95VmOa2WaFa6LBdfXIQMg5zOwOGlKqaOUiZ+1Q3yMJrMJllTLpmTUIZCqA0J9sclhHnHJzFjMmfVGUVjA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Price Calculation Script -->
+    <!-- Hitung Total Harga -->
     <script>
         const hargaPerHari = 30000;
         const jumlahUnitInput = document.getElementById('jumlah_unit');
@@ -293,7 +289,6 @@
         const totalHargaText = document.getElementById('total_harga_text');
         const totalHargaInput = document.getElementById('total_harga');
 
-        // Set minimum date to today
         const today = new Date().toISOString().split('T')[0];
         tanggalMulaiInput.min = today;
 
@@ -307,26 +302,21 @@
                 const total = hargaPerHari * unit * selisihHari;
                 totalHargaText.textContent = 'Rp ' + total.toLocaleString('id-ID');
                 totalHargaInput.value = total;
-
-                if (tanggalMulaiInput.value) {
-                    tanggalSelesaiInput.min = tanggalMulaiInput.value;
-                }
+                tanggalSelesaiInput.min = tanggalMulaiInput.value;
             } else {
                 totalHargaText.textContent = 'Rp 0';
                 totalHargaInput.value = '0';
             }
         }
 
-        // Event listeners
         jumlahUnitInput.addEventListener('input', hitungTotal);
-        tanggalMulaiInput.addEventListener('change', function () {
-            tanggalSelesaiInput.min = this.value;
+        tanggalMulaiInput.addEventListener('change', () => {
+            tanggalSelesaiInput.min = tanggalMulaiInput.value;
             hitungTotal();
         });
         tanggalSelesaiInput.addEventListener('change', hitungTotal);
 
-        // Initial calculation
-        hitungTotal();
+        hitungTotal(); // Inisialisasi
     </script>
 </body>
 

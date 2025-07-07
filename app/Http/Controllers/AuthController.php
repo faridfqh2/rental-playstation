@@ -55,7 +55,7 @@ class AuthController extends Controller
 
     public function register()
     {
-        return view('register');
+        return view('mail.register');
     }
 
     public function register_proses(Request $request)

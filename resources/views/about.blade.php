@@ -75,7 +75,7 @@
           <img src="img/tempat.jpg" class="img-fluid" alt="Perangkat">
           <div class="gallery-overlay">
             <h4>Perangkat Lengkap</h4>
-            <p>DualSense & VR Headset</p>
+            <p>Headset</p>
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@
         <div class="price-card">
           <div class="price-header">
             <h3>Regular</h3>
-            <div class="price"><span>Rp</span>25.000<span>/jam</span></div>
+            <div class="price"><span>Rp</span>10.000<span>/jam</span></div>
           </div>
           <ul class="price-features">
             <li><i class="bi bi-check-circle"></i> PlayStation 4 Slim</li>
@@ -109,7 +109,7 @@
             <li><i class="bi bi-check-circle"></i> TV 43" Full HD</li>
             <li><i class="bi bi-check-circle"></i> 1 Controller</li>
           </ul>
-          <a href="#booking" class="btn btn-outline-primary">Pilih Paket</a>
+
         </div>
       </div>
 
@@ -118,7 +118,7 @@
           <div class="popular-badge">POPULER</div>
           <div class="price-header">
             <h3>Premium</h3>
-            <div class="price"><span>Rp</span>40.000<span>/jam</span></div>
+            <div class="price"><span>Rp</span>30.000<span>/jam</span></div>
           </div>
           <ul class="price-features">
             <li><i class="bi bi-check-circle"></i> PlayStation 5</li>
@@ -127,24 +127,24 @@
             <li><i class="bi bi-check-circle"></i> 2 DualSense Controller</li>
             <li><i class="bi bi-check-circle"></i> Free Snack & Minuman</li>
           </ul>
-          <a href="#booking" class="btn btn-primary">Pilih Paket</a>
+
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="price-card">
           <div class="price-header">
-            <h3>VR Experience</h3>
-            <div class="price"><span>Rp</span>60.000<span>/jam</span></div>
+            <h3>Sewa segera</h3>
+            <div class="price"><span>Rp</span>30.000<span>/jam</span></div>
           </div>
           <ul class="price-features">
-            <li><i class="bi bi-check-circle"></i> PlayStation VR2</li>
-            <li><i class="bi bi-check-circle"></i> 30+ Game VR</li>
+            <li><i class="bi bi-check-circle"></i> Rental PlayStation</li>
+            <li><i class="bi bi-check-circle"></i> 30+ Game</li>
             <li><i class="bi bi-check-circle"></i> TV 55" 4K</li>
             <li><i class="bi bi-check-circle"></i> Full Body Tracking</li>
-            <li><i class="bi bi-check-circle"></i> Free Snack & Minuman</li>
+            <li><i class="bi bi-check-circle"></i> Beli Snack & Minuman</li>
           </ul>
-          <a href="#booking" class="btn btn-outline-primary">Pilih Paket</a>
+
         </div>
       </div>
     </div>

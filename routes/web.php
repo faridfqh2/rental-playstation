@@ -3,14 +3,17 @@
 use App\Http\Controllers\KirimEmail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\GamesController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\KirimEmailController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\KontenController;
 use App\Http\Controllers\RentalController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\KirimEmailController;
 
 
 Route::get('/orders/manage', [OrderController::class, 'manage'])->name('orders.manage');
@@ -36,9 +39,8 @@ Route::get('/', function () {
     return view('home');
 
 
-
-    //tambah route yang lain didalam sini
 });
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 Route::get('/schedule', [ScheduleController::class, 'index']);
 Route::get('/jadwal-booking', [ScheduleController::class, 'index']);
@@ -48,7 +50,8 @@ Route::post('/booking/store', [OrderController::class, 'store'])->name('booking.
 
 Route::patch('/orders/{id}/mark-paid', [OrderController::class, 'markAsPaid'])->name('orders.markPaid');
 
-
+Route::get('/paket', [KontenController::class, 'index'])->name('paket');
+Route::get('/informasi', [KontenController::class, 'informasi'])->name('informasi');
 
 Route::get('/tampilan', function () {
     return view('tampilan');
@@ -105,5 +108,12 @@ Route::put('/admin/sewa/{id}', [AdminController::class, 'update'])->name('sewa.u
 Route::delete('/admin/sewa/{id}', [AdminController::class, 'destroy'])->name('sewa.destroy');
 
 });
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+});
+
 
 

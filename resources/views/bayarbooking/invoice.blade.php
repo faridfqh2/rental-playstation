@@ -172,9 +172,10 @@
                     </div>
                     <div class="col-md-6 text-md-end mt-3 mt-md-0">
                         <h5 class="fw-bold"><i class="fas fa-store me-2"></i> Nama Bisnis Anda</h5>
-                        <p class="mb-1">Jl. Contoh No. 123, Kota</p>
-                        <p class="mb-1">Telp: (021) 123-4567</p>
-                        <p class="mb-0">Email: info@bisnisanda.com</p>
+                        <p class="mb-1">Jl. Prof. DR. Soepomo Sh No.63, Warungboto, Kec. Umbulharjo, Kota Yogyakarta,
+                            Daerah Istimewa Yogyakarta 55164</p>
+                        <p class="mb-1">Telp: 082136347300</p>
+                        <p class="mb-0">Email: pskharisma@gmail.com</p>
                     </div>
                 </div>
 

@@ -13,6 +13,9 @@
     <link href="Blogy/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
     <link href="Blogy/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
     <link href="Blogy/assets/css/main.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
     @yield('styles')
 
     <style>
@@ -233,9 +236,9 @@
                         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
                     </div>
-                    <form class="search-form ms-4">
-                        <input type="text" placeholder="Search..." class="form-control" />
-                        <button type="submit" class="btn"><i class="bi bi-search"></i></button>
+                    <form action="{{ route('search') }}" method="GET" class="d-flex">
+                        <input type="text" name="q" class="form-control me-2" placeholder="Search...">
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
                     </form>
                 </div>
             </div>
@@ -246,6 +249,13 @@
                 <nav id="navmenu" class="navmenu">
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                     <ul>
+                        <!-- Logo Update Profile -->
+                        <li>
+                            <a href="/profile" title="Update Profile">
+                                <i class="bi bi-person-circle"></i>
+                            </a>
+                        </li>
+
                         <li><a href="/" class="active">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/blog">Blog</a></li>
@@ -260,6 +270,9 @@
                             </ul>
                         </li>
                         <li><a href="/kontak">Contact</a></li>
+
+
+                        <!-- Logout -->
                         <li>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -269,6 +282,7 @@
                             </form>
                         </li>
                     </ul>
+
                 </nav>
             </div>
         </div>
@@ -284,6 +298,7 @@
     <script src="Blogy/assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="Blogy/assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <script>
         // Mobile navigation toggle
@@ -301,6 +316,23 @@
             });
         });
     </script>
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Mencegah form reload
+            const query = document.getElementById("searchInput").value.trim();
+
+            if (query) {
+                // Arahkan ke halaman pencarian (ganti URL sesuai kebutuhan)
+                window.location.href = "/search?q=" + encodeURIComponent(query);
+
+                // Atau tampilkan hasil langsung (jika pakai AJAX/JS filtering)
+                // alert("Hasil pencarian: " + query);
+            } else {
+                alert("Silakan masukkan kata kunci pencarian.");
+            }
+        });
+    </script>
+
 
     @yield('scripts')
 </body>

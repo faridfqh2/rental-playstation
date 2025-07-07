@@ -292,7 +292,7 @@
             <div class="row g-4">
               <!-- Layanan Unggulan -->
               <div class="col-lg-4 col-md-6">
-                <div class="category-card card border-0 shadow-sm h-100 hover-effect">
+                <div class="category-card card border-0 shadow-sm h-100 hover-effect position-relative">
                   <div class="card-img-container overflow-hidden">
                     <img class="img-fluid card-img-top" src="img/6.jpg" alt="Rental PS5">
                     <div class="img-overlay d-flex align-items-center justify-content-center">
@@ -313,7 +313,7 @@
                     </div>
                   </div>
                   <div class="card-footer bg-transparent border-0">
-                    <a href="#" class="btn btn-primary w-100 stretched-link">Book Now</a>
+                    <a href="{{ route('paket') }}" class="btn btn-primary w-100">Book Now</a>
                   </div>
                 </div>
               </div>
@@ -340,14 +340,15 @@
                     </div>
                   </div>
                   <div class="card-footer bg-transparent border-0">
-                    <a href="#" class="btn btn-outline-primary w-100 stretched-link">View Games</a>
+                    <a href="/tampilan" class="btn btn-outline-primary w-100 stretched-link">View Games</a>
+
                   </div>
                 </div>
               </div>
 
               <!-- Booking Online -->
               <div class="col-lg-4 col-md-6">
-                <div class="category-card card border-0 shadow-sm h-100 hover-effect">
+                <div class="category-card card border-0 shadow-sm h-100 hover-effect position-relative">
                   <div class="card-img-container overflow-hidden">
                     <img class="img-fluid card-img-top" src="img/8.jpg" alt="Booking Online">
                     <div class="img-overlay d-flex align-items-center justify-content-center">
@@ -367,7 +368,7 @@
                     </ul>
                   </div>
                   <div class="card-footer bg-transparent border-0">
-                    <a href="#" class="btn btn-primary w-100 stretched-link">Book Online</a>
+                    <a href="/informasi" class="btn btn-primary w-100 stretched-link">Book Online</a>
                   </div>
                 </div>
               </div>
@@ -376,6 +377,10 @@
         </section>
 
         <style>
+          .img-overlay {
+            pointer-events: none;
+          }
+
           .category-section {
             position: relative;
             overflow: hidden;
@@ -681,84 +686,128 @@
             }
           }
         </style>
-
-        <footer id="footer" class="footer">
-
-          <div class="container footer-top">
-            <div class="row gy-4">
-              <div class="col-lg-4 col-md-6 footer-about">
-                <a href="index.html" class="logo d-flex align-items-center">
-                  <span class="sitename">Rental Playstation</span>
-                </a>
-                <div class="footer-contact pt-3">
-                  <p>Playstation</p>
-                  <p>Yogyakarta</p>
-                  <p class="mt-3"><strong>Phone:</strong> <span>+08******</span></p>
-                  <p><strong>Email:</strong> <span>info@example.com</span></p>
-                </div>
-                <div class="social-links d-flex mt-4">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+        <footer class="footer-section bg-dark text-white py-5">
+          <div class="container">
+            <div class="row g-4">
+              <div class="col-lg-4">
+                <h3 class="mb-4">PS Kharisma</h3>
+                <p>Tempat rental PlayStation premium di Yogyakarta dengan pengalaman gaming terbaik.</p>
+                <div class="social-links mt-4">
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-whatsapp"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-tiktok"></i></a>
                 </div>
               </div>
 
-              <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Useful Links</h4>
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Terms of service</a></li>
-                  <li><a href="#">Privacy policy</a></li>
+              <div class="col-lg-2 col-md-4">
+                <h4 class="mb-4">Menu</h4>
+                <ul class="footer-links">
+                  <li><a href="#">Beranda</a></li>
+                  <li><a href="#features">Fasilitas</a></li>
+                  <li><a href="#pricing">Harga</a></li>
+                  <li><a href="#booking">Booking</a></li>
                 </ul>
               </div>
 
-              <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Our Services</h4>
-                <ul>
-                  <li><a href="#">Web Design</a></li>
-                  <li><a href="#">Web Development</a></li>
-                  <li><a href="#">Product Management</a></li>
-                  <li><a href="#">Marketing</a></li>
-                  <li><a href="#">Graphic Design</a></li>
+              <div class="col-lg-3 col-md-4">
+                <h4 class="mb-4">Kontak</h4>
+                <ul class="footer-contact">
+                  <li><i class="bi bi-geo-alt"></i> Jl. Contoh No. 123, Yogyakarta</li>
+                  <li><i class="bi bi-telephone"></i> 0812-3456-7890</li>
+                  <li><i class="bi bi-envelope"></i> info@pskharisma.com</li>
                 </ul>
               </div>
 
-              <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Hic solutasetp</h4>
-                <ul>
-                  <li><a href="#">Molestiae accusamus iure</a></li>
-                  <li><a href="#">Excepturi dignissimos</a></li>
-                  <li><a href="#">Suscipit distinctio</a></li>
-                  <li><a href="#">Dilecta</a></li>
-                  <li><a href="#">Sit quas consectetur</a></li>
+              <div class="col-lg-3 col-md-4">
+                <h4 class="mb-4">Jam Buka</h4>
+                <ul class="opening-hours">
+                  <li>Senin - Jumat: 10:00 - 22:00</li>
+                  <li>Sabtu - Minggu: 09:00 - 24:00</li>
                 </ul>
               </div>
+            </div>
 
-              <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Nobis illum</h4>
-                <ul>
-                  <li><a href="#">Ipsam</a></li>
-                  <li><a href="#">Laudantium dolorum</a></li>
-                  <li><a href="#">Dinera</a></li>
-                  <li><a href="#">Trodelas</a></li>
-                  <li><a href="#">Flexo</a></li>
-                </ul>
-              </div>
+            <hr class="mt-5">
 
+            <div class="text-center pt-3">
+              <p class="mb-0">&copy; 2023 PS Kharisma. All rights reserved.</p>
             </div>
           </div>
-
-          <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">-</strong> <span>All Rights Reserved</span></p>
-            <div class="credits">
-              Designed by <a>Faqih</a>
-            </div>
-          </div>
-
         </footer>
+        <style>
+          :root {
+            --primary-color: #6c5ce7;
+          }
+
+          .footer-section {
+            background: #1a1a1a;
+            color: #fff;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+          }
+
+          .footer-section h3,
+          .footer-section h4 {
+            color: #fff;
+          }
+
+          .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+          }
+
+          .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+          }
+
+          .footer-links,
+          .footer-contact,
+          .opening-hours {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+
+          .footer-links li,
+          .footer-contact li,
+          .opening-hours li {
+            margin-bottom: 10px;
+            color: #aaa;
+          }
+
+          .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+          }
+
+          .footer-links a:hover {
+            color: white;
+          }
+
+          .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+
+          .footer-section hr {
+            border-color: rgba(255, 255, 255, 0.1);
+          }
+        </style>
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 
         <!-- Scroll Top -->
         <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
