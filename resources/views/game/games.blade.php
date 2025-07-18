@@ -105,8 +105,8 @@
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
-                    <div class="small">Masuk sebagai:</div>
-                    Admin
+                    <div class="small">Logged in as:</div>
+                    {{ Auth::user()->name ?? 'Guest' }}
                 </div>
             </nav>
         </div>

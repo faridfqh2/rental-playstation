@@ -1,8 +1,11 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Game; // ganti sesuai model yang kamu cari
+use App\Models\Game;
+use App\Models\Blog;
+
 
 class SearchController extends Controller
 {
@@ -10,11 +13,18 @@ class SearchController extends Controller
     {
         $query = $request->input('q');
 
-        // Contoh pencarian pada tabel games
-        $results = Game::where('title', 'like', "%{$query}%")
-                        ->orWhere('description', 'like', "%{$query}%")
-                        ->get();
+        // Pencarian di Game
+        $games = Game::where('title', 'like', "%{$query}%")
+                    ->orWhere('description', 'like', "%{$query}%")
+                    ->get();
 
-        return view('search.results', compact('results', 'query'));
+        // Pencarian di Blog
+        $blogs = Blog::where('title', 'like', "%{$query}%")
+                    ->orWhere('content', 'like', "%{$query}%")
+                    ->get();
+
+    
+
+        return view('search.results', compact('query', 'games', 'blogs'));
     }
 }

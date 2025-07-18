@@ -48,34 +48,41 @@ class AdminController extends Controller
 
 public function edit($id)
 {
-    $rental = Rental::findOrFail($id);
-    return view('admin.sewa_edit', compact('rental'));
+    $order = Order::findOrFail($id);
+    return view('admin.orders_edit', compact('order'));
 }
 
 public function update(Request $request, $id)
 {
     $request->validate([
-        'nama' => 'required',
-        'email' => 'required',
-        'jumlah_unit' => 'required|integer|min:1',
-        'tanggal_mulai' => 'required|date',
-        'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
-        'alamat' => 'required',
+        'name' => 'required|string|max:255',
+        'phone' => 'required|string|max:20',
+        'qty' => 'required|integer|min:1',
+        'address' => 'required|string',
+        'total_price' => 'required|numeric|min:0',
+        'status' => 'required|in:Paid,Unpaid',
     ]);
 
-    $rental = Rental::findOrFail($id);
-    $rental->update($request->all());
-
-    return redirect()->route('admin.sewa')->with('success', 'Data berhasil diperbarui');
+    $order = Order::findOrFail($id);
+    $order->update([
+        'name' => $request->name,
+        'phone' => $request->phone,
+        'qty' => $request->qty,
+        'address' => $request->address,
+        'total_price' => $request->total_price,
+        'status' => $request->status,
+    ]);
+    return redirect()->route('orders.index')->with('success', 'Order berhasil diperbarui.');
 }
 
 public function destroy($id)
 {
-    $rental = Rental::findOrFail($id);
-    $rental->delete();
+    $order = Order::findOrFail($id);
+    $order->delete();
 
-    return redirect()->route('admin.sewa')->with('success', 'Data berhasil dihapus');
+    return redirect()->route('orders.index')->with('success', 'Order berhasil dihapus.');
 }
+
 
 public function charts()
 {
@@ -91,5 +98,12 @@ public function charts()
 }
 
 
+// Menampilkan form edit untuk Order
+
+
+// Memproses update data Order
+
+
+ 
 
 }
