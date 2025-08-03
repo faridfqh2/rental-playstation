@@ -24,11 +24,12 @@
       <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Search -->
-    <form class="d-none d-md-inline-block ms-auto me-0 me-md-3 my-2 my-md-0">
+    <form action="{{ route('admin.sewa') }}" method="GET"
+      class="d-none d-md-inline-block ms-auto me-0 me-md-3 my-2 my-md-0">
       <div class="input-group">
-        <input class="form-control" type="text" placeholder="Search..." />
-        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+        <input name="search" class="form-control" type="text" placeholder="Cari nama/email..."
+          value="{{ request('search') }}" />
+        <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
       </div>
     </form>
 

@@ -20,13 +20,9 @@
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle"><i
                 class="fas fa-bars"></i></button>
 
-        <!-- Search -->
-        <form class="d-none d-md-inline-block ms-auto me-0 me-md-3 my-2 my-md-0">
-            <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search..." />
-                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-            </div>
-        </form>
+        <input name="search" class="form-control" type="text" placeholder="Cari nama/email..."
+            value="{{ request('search') }}" />
+
 
         <!-- User Dropdown -->
         <ul class="navbar-nav ms-auto me-3 me-lg-4">

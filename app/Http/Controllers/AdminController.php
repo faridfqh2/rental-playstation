@@ -69,15 +69,13 @@ public function update(Request $request, $id)
     return redirect()->route('admin.sewa')->with('success', 'Data penyewaan berhasil diperbarui.');
 }
 
-
 public function destroy($id)
 {
-    $order = Order::findOrFail($id);
-    $order->delete();
+    $rental = Rental::findOrFail($id);
+    $rental->delete();
 
-    return redirect()->route('orders.index')->with('success', 'Order berhasil dihapus.');
+    return redirect()->route('admin.sewa')->with('success', 'Data penyewaan berhasil dihapus.');
 }
-
 
 public function charts()
 {
