@@ -156,6 +156,20 @@
   </script>
   <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Ambil elemen input tanggal
+    const tanggalInput = document.getElementById('tanggal_booking');
+
+    // Buat tanggal hari ini dalam format yyyy-mm-dd
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // bulan dimulai dari 0
+    const dd = String(today.getDate()).padStart(2, '0');
+    const todayStr = `${yyyy}-${mm}-${dd}`;
+
+    // Set nilai minimal input tanggal ke hari ini
+    tanggalInput.min = todayStr;
+  </script>
 </body>
 
 </html>

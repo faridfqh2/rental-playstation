@@ -234,29 +234,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Data Pribadi -->
-                    <div class="form-section">
-                        <h5 class="section-title">Data Pribadi</h5>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="nama" class="form-label">Nama Lengkap</label>
-                                <input type="text" id="nama" name="nama" class="form-control" required
-                                    placeholder="Nama lengkap Anda">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" required
-                                    placeholder="email@contoh.com">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="alamat" class="form-label">Alamat Lengkap</label>
-                            <textarea id="alamat" name="alamat" class="form-control" rows="3" required
-                                placeholder="Alamat pengiriman perangkat"></textarea>
-                        </div>
-                    </div>
-
                     <!-- Ringkasan Harga -->
                     <div class="total-price-container text-center">
                         <div class="total-price-label">Total Biaya Sewa</div>
@@ -291,6 +268,7 @@
 
         const today = new Date().toISOString().split('T')[0];
         tanggalMulaiInput.min = today;
+        tanggalSelesaiInput.min = today;
 
         function hitungTotal() {
             const unit = parseInt(jumlahUnitInput.value) || 0;

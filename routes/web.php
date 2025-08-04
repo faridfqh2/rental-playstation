@@ -14,6 +14,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\KirimEmailController;
+use App\Http\Controllers\Admin\AdminTransactionController;
 
 
 Route::get('/orders/manage', [OrderController::class, 'manage'])->name('orders.manage');
@@ -87,9 +88,6 @@ Route::get('/about', function () {
 });
 Route::get('blog',[BlogController::class,'index'])->name('blog');
 
-Route::get('/pembayaran', function () {
-    return view('pembayaran');
-});
 
 Route::get('/pembayaran', [OrderController::class, 'pembayaran'])->name('pembayaran');
 

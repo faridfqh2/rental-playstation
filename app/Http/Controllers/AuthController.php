@@ -64,7 +64,7 @@ class AuthController extends Controller
             'nama'  => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
-            'remember' => 'nullable',
+            'alamat' => 'required',
             'phone' => 'required'
             
         ]);
@@ -75,6 +75,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'email_verified_at' => Carbon::now(),
             'phone' => $request->phone,
+            'alamat' => $request->alamat,
             
         ]);
 

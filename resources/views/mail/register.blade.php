@@ -57,7 +57,6 @@
                                             <input type="password" name="password" id="password"
                                                 class="form-control form-control-lg" required />
                                         </div>
-
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="password_confirmation">Confirm
                                                 Password</label>
@@ -65,6 +64,12 @@
                                                 id="password_confirmation" class="form-control form-control-lg"
                                                 required />
                                         </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="alamat">Alamat</label>
+                                            <textarea name="alamat" id="alamat" class="form-control form-control-lg"
+                                                required>{{ old('alamat') }}</textarea>
+                                        </div>
+
 
                                         <div class="mb-4">
                                             <button class="btn btn-success btn-lg w-100 btn-dark"

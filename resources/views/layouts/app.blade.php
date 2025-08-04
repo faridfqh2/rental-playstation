@@ -247,41 +247,43 @@
         <div class="nav-wrap">
             <div class="container d-flex justify-content-center position-relative">
                 <nav id="navmenu" class="navmenu">
-                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-                    <ul>
-                        <!-- Logo Update Profile -->
-                        <li>
-                            <a href="/profile" title="Update Profile">
-                                <i class="bi bi-person-circle"></i>
-                            </a>
-                        </li>
+                    @auth
 
-                        <li><a href="/" class="active">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/schedule">Schedule</a></li>
-                        <li class="dropdown"><a href="#"><span>Payment</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="{{route('login')}}">Log in</a></li>
-                                <li><a href="/pembayaran">Payment</a></li>
-                                <li><a href="/sewa">Rental Playstation</a></li>
-                                <li><a href="search-results.html">Search Results</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/kontak">Contact</a></li>
+                        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                        <ul>
+                            <!-- Logo Update Profile -->
 
 
-                        <!-- Logout -->
-                        <li>
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button type="submit" class="logout-btn" title="Logout">
-                                    <i class="bi bi-box-arrow-right"></i>
-                                </button>
-                            </form>
-                        </li>
-                    </ul>
+                            <li><a href="/" class="active">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/schedule">Schedule</a></li>
+                            <li class="dropdown"><a href="#"><span>Booking</span>
+                                    <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                <ul>
+                                    <li><a href="/pembayaran">Main Ditempat</a></li>
+                                    <li><a href="/sewa">Sewa Playstation</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/kontak">Contact</a></li>
+                            <li>
+                                <a href="/profile" title="Update Profile">
+                                    <i class="bi bi-person-circle"></i>
+                                </a>
+                            </li>
+
+
+                            <!-- Logout -->
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="logout-btn" title="Logout">
+                                        <i class="bi bi-box-arrow-right"></i>
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    @endauth
 
                 </nav>
             </div>

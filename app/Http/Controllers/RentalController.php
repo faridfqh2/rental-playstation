@@ -8,6 +8,7 @@ use Midtrans\Config;
 use App\Models\Rental;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RentalController extends Controller
 {
@@ -18,19 +19,25 @@ class RentalController extends Controller
 
     public function store(Request $request)
     {
-       
-        $validated = $request->validate([
-            'nama' => 'required',
-            'email'=> 'required',
+        $request->validate([
             'jumlah_unit' => 'required|integer|min:1',
             'tanggal_mulai' => 'required|date|after_or_equal:today',
             'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
-            'alamat' => 'required|string|max:255',
             'total_harga' => 'required|integer|min:1',
         ]);
 
         // Simpan data ke database
-        $rental = Rental::create($validated);
+        $rental = Rental::create(
+            [
+                'nama' => auth()->user()->name,
+                'email' => auth()->user()->email,
+                'jumlah_unit' => $request->jumlah_unit,
+                'tanggal_mulai' => Carbon::parse($request->tanggal_mulai),
+                'tanggal_selesai' => Carbon::parse($request->tanggal_selesai),
+                'alamat' => auth()->user()->alamat,
+                'total_harga' => $request->total_harga,
+            ]
+        );
 
         // Buat order ID unik untuk Midtrans
         $orderId = 'RENTAL-' . $rental->id . '-' . Str::random(5);
@@ -70,9 +77,9 @@ class RentalController extends Controller
                 'gross_amount' => $rental->total_harga,
             ],
             'customer_details' => [
-                'first_name' => 'Penyewa',
-                'email' => 'dummy@email.com',
-                'phone' => '081234567890',
+                'name' => $rental->nama,
+                'email' => $rental->email,
+                'phone' => $rental->user->phone ?? '081234567890',
             ],
         ];
 
