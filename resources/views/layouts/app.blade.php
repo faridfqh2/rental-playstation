@@ -261,6 +261,7 @@
                             <li class="dropdown"><a href="#"><span>Booking</span>
                                     <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                                 <ul>
+                                    <li><a href="/history">History</a></li>
                                     <li><a href="/pembayaran">Main Ditempat</a></li>
                                     <li><a href="/sewa">Sewa Playstation</a></li>
                                 </ul>

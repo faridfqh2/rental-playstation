@@ -115,9 +115,10 @@ Route::delete('admin/orders/{order}', [OrderController::class, 'destroy'])->name
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::get('/history', [RentalController::class, 'history'])->name('sewa.history');
+
 });
 
-Route::get('/history', [RentalController::class, 'history'])->name('sewa.history');
 
 
 
