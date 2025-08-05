@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Carbon\Carbon;
 use Midtrans\Snap;
 use Midtrans\Config;
@@ -105,4 +106,19 @@ class RentalController extends Controller
     
 
     return view('bayarsewa.checkoutsewa', compact('rental', 'snapToken'));
-}}
+}
+
+    public function history()
+    {
+        // Pastikan user sudah login
+        if (!auth()->check()) {
+            return redirect()->route('login')->with('error', 'Silakan login terlebih dahulu.');
+        }
+
+        $rentals = Order::where('name', auth()->user()->name)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('history', compact('rentals'));
+    }
+}

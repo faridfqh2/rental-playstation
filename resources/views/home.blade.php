@@ -686,139 +686,190 @@
             }
           }
         </style>
-        <footer class="footer-section bg-dark text-white py-5">
-          <div class="container">
-            <div class="row g-4">
-              <div class="col-lg-4">
-                <h3 class="mb-4">PS Kharisma</h3>
-                <p>Tempat rental PlayStation premium di Yogyakarta dengan pengalaman gaming terbaik.</p>
-                <div class="social-links mt-4">
-                  <a href="#"><i class="bi bi-instagram"></i></a>
-                  <a href="#"><i class="bi bi-whatsapp"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                  <a href="#"><i class="bi bi-tiktok"></i></a>
-                </div>
-              </div>
+</main>
 
-              <div class="col-lg-2 col-md-4">
-                <h4 class="mb-4">Menu</h4>
-                <ul class="footer-links">
-                  <li><a href="#">Beranda</a></li>
-                  <li><a href="#features">Fasilitas</a></li>
-                  <li><a href="#pricing">Harga</a></li>
-                  <li><a href="#booking">Booking</a></li>
-                </ul>
-              </div>
+<style>
+  :root {
+    --primary-color: #6c5ce7;
+  }
 
-              <div class="col-lg-3 col-md-4">
-                <h4 class="mb-4">Kontak</h4>
-                <ul class="footer-contact">
-                  <li><i class="bi bi-geo-alt"></i> Jl. Contoh No. 123, Yogyakarta</li>
-                  <li><i class="bi bi-telephone"></i> 0812-3456-7890</li>
-                  <li><i class="bi bi-envelope"></i> info@pskharisma.com</li>
-                </ul>
-              </div>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: #f8f9fa;
+    /* biar warna dasar sama dengan section lain */
+  }
 
-              <div class="col-lg-3 col-md-4">
-                <h4 class="mb-4">Jam Buka</h4>
-                <ul class="opening-hours">
-                  <li>Senin - Jumat: 10:00 - 22:00</li>
-                  <li>Sabtu - Minggu: 09:00 - 24:00</li>
-                </ul>
-              </div>
-            </div>
+  .footer-section {
+    background: #1a1a1a;
+    color: #fff;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 100vw;
+    min-height: 300px;
+    /* Hapus position: fixed dan bottom agar footer normal di bawah konten */
+    position: static;
+    left: unset;
+    bottom: unset;
+    z-index: 10;
+    overflow-x: hidden;
+  }
 
-            <hr class="mt-5">
+  .footer-section .container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 
-            <div class="text-center pt-3">
-              <p class="mb-0">&copy; 2023 PS Kharisma. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
-        <style>
-          :root {
-            --primary-color: #6c5ce7;
-          }
+  .footer-section h3,
+  .footer-section h4 {
+    color: #fff;
+  }
 
-          .footer-section {
-            background: #1a1a1a;
-            color: #fff;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-          }
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+  }
 
-          .footer-section h3,
-          .footer-section h4 {
-            color: #fff;
-          }
+  .social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+  }
 
-          .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-          }
+  .footer-links,
+  .footer-contact,
+  .opening-hours {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-          .social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-3px);
-          }
+  .footer-links li,
+  .footer-contact li,
+  .opening-hours li {
+    margin-bottom: 10px;
+    color: #aaa;
+  }
 
-          .footer-links,
-          .footer-contact,
-          .opening-hours {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-          }
+  .footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 
-          .footer-links li,
-          .footer-contact li,
-          .opening-hours li {
-            margin-bottom: 10px;
-            color: #aaa;
-          }
+  .footer-links a:hover {
+    color: white;
+  }
 
-          .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-          }
+  .footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-          .footer-links a:hover {
-            color: white;
-          }
+  .footer-section hr {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
 
-          .footer-contact li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-          }
+  /* Agar konten tidak ketutupan footer */
+  body {
+    padding-bottom: 0;
+  }
 
-          .footer-section hr {
-            border-color: rgba(255, 255, 255, 0.1);
-          }
-        </style>
-        <!-- Bootstrap Icons -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  @media (max-width: 991px) {
+    .footer-section .container-fluid {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    body {
+      padding-bottom: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .footer-section {
+      min-height: 420px;
+    }
+
+    body {
+      padding-bottom: 0;
+    }
+  }
+</style>
+<footer class="footer-section bg-dark text-white py-5">
+  <div class="container-fluid">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <h3 class="mb-4">PS Kharisma</h3>
+        <p>Tempat rental PlayStation premium di Yogyakarta dengan pengalaman gaming terbaik.</p>
+        <div class="social-links mt-4">
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4">
+        <h4 class="mb-4">Menu</h4>
+        <ul class="footer-links">
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#features">Fasilitas</a></li>
+          <li><a href="#pricing">Harga</a></li>
+          <li><a href="#booking">Booking</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <h4 class="mb-4">Kontak</h4>
+        <ul class="footer-contact">
+          <li><i class="bi bi-geo-alt"></i> Jl. Contoh No. 123, Yogyakarta</li>
+          <li><i class="bi bi-telephone"></i> 0812-3456-7890</li>
+          <li><i class="bi bi-envelope"></i> info@pskharisma.com</li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <h4 class="mb-4">Jam Buka</h4>
+        <ul class="opening-hours">
+          <li>Senin - Jumat: 10:00 - 22:00</li>
+          <li>Sabtu - Minggu: 09:00 - 24:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="mt-5">
+
+    <div class="text-center pt-3">
+      <p class="mb-0">&copy; 2023 PS Kharisma. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 
-        <!-- Scroll Top -->
-        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>
 
-        <!-- Preloader -->
-        <div id="preloader"></div>
+<!-- Preloader -->
+<div id="preloader"></div>
 
-        <!-- Main JS File -->
-        <script src="Blogy/assets/js/main.js"></script>
+<!-- Main JS File -->
+<script src="Blogy/assets/js/main.js"></script>
 
-        </body>
+</body>
 
-        </html>
+</html>

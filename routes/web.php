@@ -117,5 +117,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
 
+Route::get('/history', [RentalController::class, 'history'])->name('sewa.history');
+
 
 
