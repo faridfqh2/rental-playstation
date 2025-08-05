@@ -29,8 +29,8 @@
 
                 <div class="profile-avatar-section">
                     <div class="avatar-preview">
-                        @if(auth()->user()->profile_photo)
-                            <img src="{{ asset('storage/' . auth()->user()->profile_photo) }}" class="avatar-image"
+                        @if(auth()->user()->photo)
+                            <img src="{{ asset('storage/' . auth()->user()->photo) }}" class="avatar-image"
                                 id="avatarPreviewImg">
                         @else
                             <div class="avatar-placeholder" id="avatarPreviewPlaceholder">
@@ -44,7 +44,7 @@
                         <label for="profilePhoto" class="btn-upload">
                             <i class="fas fa-camera"></i> Pilih Foto
                         </label>
-                        <input type="file" name="profile_photo" id="profilePhoto" accept="image/*" class="hidden-upload">
+                        <input type="file" name="photo" id="profilePhoto" accept="image/*" class="hidden-upload">
                         <small class="upload-hint">Format: JPG, PNG. Maksimal 2MB</small>
                     </div>
                 </div>

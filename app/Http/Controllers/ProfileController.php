@@ -18,20 +18,20 @@ class ProfileController extends Controller
     $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email',
-        'profile_photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
     ]);
 
     $user = auth()->user();
 
-    if ($request->hasFile('profile_photo')) {
+    if ($request->hasFile('photo')) {
         // Hapus foto lama kalau ada
-        if ($user->profile_photo) {
-            Storage::delete($user->profile_photo);
+        if ($user->photo) {
+            Storage::delete($user->photo);
         }
 
         // Simpan foto baru
-        $path = $request->file('profile_photo')->store('profile_photos', 'public');
-        $user->profile_photo = $path;
+        $path = $request->file('photo')->store('photos', 'public');
+        $user->photo = $path;
     }
 
     $user->name = $request->name;
