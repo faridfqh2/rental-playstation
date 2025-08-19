@@ -15,7 +15,7 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/img/ps5.jpg" class="d-block w-100" alt="...">
+          <img src="/img/ps5.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
           <img src="/img/gta2.jpg" class="d-block w-100" alt="...">
@@ -48,7 +48,7 @@
 
           <!-- Featured Post (Large) -->
           <article class="blog-item featured" data-aos="fade-up">
-            <img src="img/1.jpg" alt="Blog Image" class="img-fluid">
+            <img src="img/1.png" alt="Blog Image" class="img-fluid">
             <div class="blog-content">
               <div class="post-meta">
                 <span class="date">Apr. 14, 2025</span>
@@ -183,7 +183,7 @@
 
               <div class="swiper-slide">
                 <div class="blog-post-item">
-                  <img src="img/gta.jpg" alt="Blog Image">
+                  <img src="img/gta2.jpg" alt="Blog Image">
                   <div class="blog-post-content">
                     <div class="post-meta">
                       <span><i class="bi bi-person"></i> Mark Wilson</span>
