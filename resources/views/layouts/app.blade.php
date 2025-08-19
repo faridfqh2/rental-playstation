@@ -263,7 +263,7 @@
                                 <ul>
                                     <li><a href="/history">History</a></li>
                                     <li><a href="/pembayaran">Main Ditempat</a></li>
-                                    <li><a href="/sewa">Sewa Playstation</a></li>
+                                    <li><a href="/sewa">Main Dirumah</a></li>
                                 </ul>
                             </li>
                             <li><a href="/kontak">Contact</a></li>
