@@ -20,10 +20,6 @@
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle"><i
                 class="fas fa-bars"></i></button>
 
-        <input name="search" class="form-control" type="text" placeholder="Cari nama/email..."
-            value="{{ request('search') }}" />
-
-
         <!-- User Dropdown -->
         <ul class="navbar-nav ms-auto me-3 me-lg-4">
             <li class="nav-item dropdown">

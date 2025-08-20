@@ -816,10 +816,8 @@
         <h3 class="mb-4">PS Kharisma</h3>
         <p>Tempat rental PlayStation premium di Yogyakarta dengan pengalaman gaming terbaik.</p>
         <div class="social-links mt-4">
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-whatsapp"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-tiktok"></i></a>
+          <a href="https://www.instagram.com/stadiumgame?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+              class="bi bi-instagram"></i></a>
         </div>
       </div>
       <div class="col-lg-2 col-md-4">

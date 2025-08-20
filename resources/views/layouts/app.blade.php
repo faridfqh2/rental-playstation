@@ -232,9 +232,9 @@
                 </a>
                 <div class="d-flex align-items-center">
                     <div class="social-links">
-                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+
+                        <a href="https://www.instagram.com/stadiumgame?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            class="instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                     <form action="{{ route('search') }}" method="GET" class="d-flex">
                         <input type="text" name="q" class="form-control me-2" placeholder="Search...">

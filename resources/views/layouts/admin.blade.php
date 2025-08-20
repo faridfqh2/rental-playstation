@@ -26,11 +26,7 @@
 
     <form action="{{ route('admin.sewa') }}" method="GET"
       class="d-none d-md-inline-block ms-auto me-0 me-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input name="search" class="form-control" type="text" placeholder="Cari nama/email..."
-          value="{{ request('search') }}" />
-        <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-      </div>
+
     </form>
 
     <!-- User Dropdown -->
