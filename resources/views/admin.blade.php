@@ -9,7 +9,7 @@
 
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-    <link href="{{ asset('rental/css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('Rental/css/styles.css') }}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -184,7 +184,7 @@
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"></script>
-    <script src="{{ asset('rental/js/datatables-simple-demo.js') }}"></script>
+    <script src="{{ asset('Rental/js/datatables-simple-demo.js') }}"></script>
 
     <!-- Custom Chart -->
     <script>
