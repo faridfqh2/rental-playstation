@@ -13,7 +13,7 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
     <!-- Custom CSS -->
-    <link href="{{ asset('rental/css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('Rental/css/styles.css') }}" rel="stylesheet">
 
     <style>
         .form-container {
@@ -119,7 +119,7 @@
                         <h1><i class="fas fa-gamepad"></i> Tambah Game</h1>
 
                         @if(session('success'))
-                            <div class="alert alert-success">{{ session('success') }}</div>
+                        <div class="alert alert-success">{{ session('success') }}</div>
                         @endif
 
                         <form method="POST" action="{{ route('games.store') }}" enctype="multipart/form-data">
