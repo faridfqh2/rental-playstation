@@ -254,19 +254,19 @@
                             <!-- Logo Update Profile -->
 
 
-                            <li><a href="/" class="active">Home</a></li>
-                            <li><a href="/about">About</a></li>
+                            <li><a href="/" class="active">Beranda</a></li>
+                            <li><a href="/about">Tentang Kami</a></li>
                             <li><a href="/blog">Blog</a></li>
-                            <li><a href="/schedule">Schedule</a></li>
-                            <li class="dropdown"><a href="#"><span>Booking</span>
+                            <li><a href="/schedule">Jadwal</a></li>
+                            <li class="dropdown"><a href="#"><span>Pemesanan</span>
                                     <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                                 <ul>
-                                    <li><a href="/history">History</a></li>
+                                    <li><a href="/history">Riwayat Pemesanan</a></li>
                                     <li><a href="/pembayaran">Main Ditempat</a></li>
                                     <li><a href="/sewa">Main Dirumah</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/kontak">Contact</a></li>
+                            <li><a href="/kontak">Kontak</a></li>
                             <li>
                                 <a href="/profile" title="Update Profile">
                                     <i class="bi bi-person-circle"></i>

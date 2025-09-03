@@ -40,10 +40,5 @@
             </ul>
         </div>
 
-        {{-- Catatan --}}
-        <div class="max-w-3xl mx-auto mb-8">
-            <p><strong>Perhatian:</strong>KTP diperlukan</p>
-        </div>
-
     </div>
 @endsection

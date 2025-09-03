@@ -39,8 +39,8 @@
 
     <section> <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Featured Menu</h2>
-        <div><span>Check Our</span> <span class="description-title">Featured Menu</span></div>
+        <h2>Fitur Unggulan</h2>
+        <div><span>Cek Sekarang</span> <span class="description-title">Fitur Unggulan</span></div>
       </div><!-- End Section Title -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -81,7 +81,7 @@
             <div class="blog-content">
               <div class="post-meta">
                 <span class="date">Apr. 14, 2025</span>
-                <span class="/schedule">Schedule</span>
+                <span class="/schedule">Jadwal</span>
               </div>
               <h3 class="post-title">
                 <a href="/schedule" title="Ut enim ad minim veniam, quis nostrud exercitation">Cek Jadwal
@@ -95,7 +95,7 @@
             <div class="blog-content">
               <div class="post-meta">
                 <span class="date">Apr. 14, 2025</span>
-                <span class="/pembayaran">Payment</span>
+                <span class="/pembayaran">Pembayaran</span>
               </div>
               <h3 class="post-title">
                 <a href="/pembayaran" title="Adipiscing elit, sed do eiusmod tempor incididunt">Ayo, Pesan
@@ -109,7 +109,7 @@
             <div class="blog-content">
               <div class="post-meta">
                 <span class="date">Apr. 14, 2025</span>
-                <span class="/kontak">Contact</span>
+                <span class="/kontak">Kontak</span>
               </div>
               <h3 class="post-title">
                 <a href="/kontak" title="Excepteur sint occaecat cupidatat non proident">Ada Info Kontak
@@ -130,8 +130,8 @@
       <div class="container">
         <!-- Section Header -->
         <div class="section-header text-center mb-5" data-aos="fade-up">
-          <h2 class="display-5 fw-bold mb-3">Check Our Game</h2>
-          <p class="lead text-muted">Discover your favorite gaming experiences</p>
+          <h2 class="display-5 fw-bold mb-3">Cek Game</h2>
+          <p class="lead text-muted">Temukan pengalaman bermain game favorit Anda</p>
           <div class="divider mx-auto my-4"></div>
         </div>
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -253,7 +253,7 @@
             <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
               <a href="/tampilan" class="btn btn-lg rounded-pill px-4 custom-gold-btn"
                 style="font-weight: 600; box-shadow: 0 4px 15px rgba(251, 251, 251, 0.4); transition: all 0.3s ease;">
-                More Games
+                Semua Game
               </a>
             </div>
 
@@ -284,8 +284,8 @@
           <div class="container">
             <div class="row mb-4">
               <div class="col-12 text-center">
-                <h2 class="section-title">Why Choose Our PS5 Rental?</h2>
-                <p class="lead text-muted">Premium gaming experience at affordable prices</p>
+                <h2 class="section-title">Kenapa memilih rental?</h2>
+                <p class="lead text-muted">Pengalaman bermain game premium dengan harga terjangkau</p>
               </div>
             </div>
 
@@ -296,16 +296,16 @@
                   <div class="card-img-container overflow-hidden">
                     <img class="img-fluid card-img-top" src="img/6.jpg" alt="Rental PS5">
                     <div class="img-overlay d-flex align-items-center justify-content-center">
-                      <span class="overlay-text">Start Gaming Now</span>
+                      <span class="overlay-text">Mulai Bermain Sekarang</span>
                     </div>
                   </div>
                   <div class="card-body text-center">
                     <div class="icon-box mb-3">
                       <i class="fas fa-gamepad fa-3x text-primary"></i>
                     </div>
-                    <h3 class="h5 card-title">Flexible Rental Plans</h3>
-                    <p class="card-text text-muted">Play your favorite games with affordable daily & weekly rental
-                      options!</p>
+                    <h3 class="h5 card-title">Rencana Sewa Fleksibel</h3>
+                    <p class="card-text text-muted">Mainkan game favorit Anda dengan opsi sewa harian & mingguan yang
+                      terjangkau!</p>
                     <div class="mt-3">
                       <span class="badge bg-primary me-1">PS5</span>
                       <span class="badge bg-success me-1">4K</span>
@@ -313,7 +313,7 @@
                     </div>
                   </div>
                   <div class="card-footer bg-transparent border-0">
-                    <a href="{{ route('paket') }}" class="btn btn-primary w-100">Book Now</a>
+                    <a href="{{ route('paket') }}" class="btn btn-primary w-100">Booking Sekarang</a>
                   </div>
                 </div>
               </div>
@@ -324,15 +324,16 @@
                   <div class="card-img-container overflow-hidden">
                     <img class="img-fluid card-img-top" src="img/7.jpg" alt="Game Populer">
                     <div class="img-overlay d-flex align-items-center justify-content-center">
-                      <span class="overlay-text">Latest Titles</span>
+                      <span class="overlay-text">Judul Terbaru</span>
                     </div>
                   </div>
                   <div class="card-body text-center">
                     <div class="icon-box mb-3">
                       <i class="fas fa-trophy fa-3x text-primary"></i>
                     </div>
-                    <h3 class="h5 card-title">Popular Game Library</h3>
-                    <p class="card-text text-muted">Enjoy the hottest titles including FIFA 23, GTA V, and Tekken 8.</p>
+                    <h3 class="h5 card-title">Perpustakaan Game Populer</h3>
+                    <p class="card-text text-muted">Nikmati judul-judul terpanas termasuk FIFA 23, GTA V, dan Tekken 8.
+                    </p>
                     <div class="game-platforms mt-3">
                       <img src="img/ps5-logo.png" alt="PS5" height="30" class="me-2">
                       <img src="img/4k-logo.png" alt="4K" height="30" class="me-2">
@@ -340,7 +341,7 @@
                     </div>
                   </div>
                   <div class="card-footer bg-transparent border-0">
-                    <a href="/tampilan" class="btn btn-outline-primary w-100 stretched-link">View Games</a>
+                    <a href="/tampilan" class="btn btn-outline-primary w-100 stretched-link">Lihat Game</a>
 
                   </div>
                 </div>
@@ -352,24 +353,26 @@
                   <div class="card-img-container overflow-hidden">
                     <img class="img-fluid card-img-top" src="img/8.jpg" alt="Booking Online">
                     <div class="img-overlay d-flex align-items-center justify-content-center">
-                      <span class="overlay-text">Instant Booking</span>
+                      <span class="overlay-text">Booking Instan</span>
                     </div>
                   </div>
                   <div class="card-body text-center">
                     <div class="icon-box mb-3">
                       <i class="fas fa-calendar-check fa-3x text-primary"></i>
                     </div>
-                    <h3 class="h5 card-title">Easy Online Booking</h3>
-                    <p class="card-text text-muted">Secure your gaming session in just a few clicks!</p>
+                    <h3 class="h5 card-title">Tentang & Panduan</h3>
+                    <p class="card-text text-muted">Pelajari cara menggunakan layanan kami dengan mudah dan cepat!</p>
                     <ul class="list-unstyled text-start mt-3">
-                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>24/7 Booking</li>
-                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Instant Confirmation</li>
-                      <li><i class="fas fa-check-circle text-success me-2"></i>Flexible Scheduling</li>
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Alur Booking Lengkap</li>
+                      <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Ketentuan & Peraturan
+                        Penggunaan</li>
+                      <li><i class="fas fa-check-circle text-success me-2"></i>Panduan Pembayaran & Pengambilan PS</li>
                     </ul>
                   </div>
                   <div class="card-footer bg-transparent border-0">
-                    <a href="/informasi" class="btn btn-primary w-100 stretched-link">Book Online</a>
+                    <a href="/panduan" class="btn btn-primary w-100 stretched-link">Lihat Panduan</a>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -474,8 +477,8 @@
           <div class="container">
             <!-- Section Header -->
             <div class="section-header text-center mb-5" data-aos="fade-up">
-              <h2 class="display-5 fw-bold mb-3">Explore Game Genres</h2>
-              <p class="lead text-muted">Discover your favorite gaming experiences</p>
+              <h2 class="display-5 fw-bold mb-3">Jelajahi Genre Game</h2>
+              <p class="lead text-muted">Temukan pengalaman bermain game favorit Anda</p>
               <div class="divider mx-auto my-4"></div>
             </div>
 
@@ -490,13 +493,14 @@
                       <i class="bi bi-trophy-fill me-2"></i> Competitive
                     </div>
                     <div class="img-overlay d-flex align-items-end p-4">
-                      <a href="/sports-games" class="btn btn-outline-light stretched-link">View Games</a>
+                      <a href="/sports-games" class="btn btn-outline-light stretched-link">Lihat Game</a>
                     </div>
                   </div>
                   <div class="card-body">
                     <h3 class="h4 card-title mb-3">Sports Games</h3>
-                    <p class="card-text text-muted mb-4">Experience the thrill of competition with realistic sports
-                      simulations.</p>
+                    <p class="card-text text-muted mb-4">Rasakan sensasi kompetisi dengan permainan olahraga yang
+                      realistis.
+                    </p>
                     <div class="game-tags">
                       <span class="badge bg-light text-dark me-1 mb-1">FIFA 23</span>
                       <span class="badge bg-light text-dark me-1 mb-1">NBA 2K24</span>
@@ -515,12 +519,13 @@
                       <i class="bi bi-controller me-2"></i> Adventure
                     </div>
                     <div class="img-overlay d-flex align-items-end p-4">
-                      <a href="/action-games" class="btn btn-outline-light stretched-link">View Games</a>
+                      <a href="/action-games" class="btn btn-outline-light stretched-link">Lihat Game</a>
                     </div>
                   </div>
                   <div class="card-body">
                     <h3 class="h4 card-title mb-3">Action Games</h3>
-                    <p class="card-text text-muted mb-4">Immerse yourself in heart-pounding adventures and epic battles.
+                    <p class="card-text text-muted mb-4">Rasakan sensasi petualangan yang mendebarkan dan pertempuran
+                      epik.
                     </p>
                     <div class="game-tags">
                       <span class="badge bg-light text-dark me-1 mb-1">GTA V</span>
@@ -544,8 +549,9 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    <h3 class="h4 card-title mb-3">Fighting Games</h3>
-                    <p class="card-text text-muted mb-4">Test your skills in intense one-on-one combat matches.</p>
+                    <h3 class="h4 card-title mb-3">Game Fighting</h3>
+                    <p class="card-text text-muted mb-4">Uji keterampilan Anda dalam pertarungan satu lawan satu yang
+                      intens.</p>
                     <div class="game-tags">
                       <span class="badge bg-light text-dark me-1 mb-1">Tekken 8</span>
                       <span class="badge bg-light text-dark me-1 mb-1">Mortal Kombat</span>
@@ -563,12 +569,12 @@
           <div class="container position-relative z-index-2">
             <div class="row justify-content-center text-center" data-aos="zoom-in">
               <div class="col-lg-8">
-                <h2 class="display-5 fw-bold text-white mb-4">Play Your Favorite Games Now!</h2>
-                <p class="lead text-light mb-5">Experience comfort, affordable prices, and fast service at the best
-                  PlayStation rental in your city.</p>
+                <h2 class="display-5 fw-bold text-white mb-4">Mainkan Game Favorit Anda Sekarang!</h2>
+                <p class="lead text-light mb-5">Rasakan kenyamanan, harga terjangkau, dan layanan cepat di tempat
+                  penyewaan PlayStation terbaik di kota Anda.</p>
                 <div class="d-flex justify-content-center gap-3">
                   <a href="/pembayaran" class="btn btn-primary btn-lg px-4 py-3 rounded-pill fw-bold">
-                    <i class="bi bi-calendar-check me-2"></i> Book Now
+                    <i class="bi bi-calendar-check me-2"></i> Booking Sekarang
                   </a>
                 </div>
               </div>
@@ -834,7 +840,7 @@
         <ul class="footer-contact">
           <li><i class="bi bi-geo-alt"></i> Jl. Contoh No. 123, Yogyakarta</li>
           <li><i class="bi bi-telephone"></i> 0812-3456-7890</li>
-          <li><i class="bi bi-envelope"></i> info@pskharisma.com</li>
+          <li><i class="bi bi-envelope"></i> Infopskharisma@gmail.com</li>
         </ul>
       </div>
       <div class="col-lg-3 col-md-4">
