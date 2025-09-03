@@ -95,10 +95,10 @@
             <div class="blog-content">
               <div class="post-meta">
                 <span class="date">Apr. 14, 2025</span>
-                <span class="/payment">Payment</span>
+                <span class="/pembayaran">Payment</span>
               </div>
               <h3 class="post-title">
-                <a href="/payment" title="Adipiscing elit, sed do eiusmod tempor incididunt">Ayo, Pesan
+                <a href="/pembayaran" title="Adipiscing elit, sed do eiusmod tempor incididunt">Ayo, Pesan
                   Sekarang!</a>
               </h3>
             </div>
