@@ -24,11 +24,11 @@
                 <div class="card-body p-4 p-lg-5">
 
                   @if ($errors->has('loginError'))
-            <div class="alert alert-danger">{{ $errors->first('loginError') }}</div>
-          @endif
+                    <div class="alert alert-danger">{{ $errors->first('loginError') }}</div>
+                  @endif
                   @if ($errors->has('kosong'))
-            <div class="alert alert-warning">{{ $errors->first('kosong') }}</div>
-          @endif
+                    <div class="alert alert-warning">{{ $errors->first('kosong') }}</div>
+                  @endif
 
                   <form action="{{ route('login.proses') }}" method="POST">
                     @csrf
