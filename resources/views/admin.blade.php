@@ -99,14 +99,21 @@
                         <div class="col-xl-6">
                             <div class="card mb-4">
                                 <div class="card-header"><i class="fas fa-chart-bar me-1"></i> Bar Chart</div>
-                                <div class="card-body"><canvas id="myBarChartMain" width="100%" height="40"></canvas>
+                                <div class="card-body">
+                                    <canvas id="myBarChartMain" width="100%" height="40"></canvas>
+                                    <button class="btn btn-sm btn-primary mt-2" id="downloadIncomeChart">Download
+                                        PDF</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-6">
                             <div class="card mb-4">
                                 <div class="card-header"><i class="fas fa-chart-bar me-1"></i> Bar Chart</div>
-                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                <div class="card-body">
+                                    <canvas id="myBarChart" width="100%" height="40"></canvas>
+                                    <button class="btn btn-sm btn-primary mt-2" id="downloadSalesChart">Download
+                                        PDF</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -190,7 +197,38 @@
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="{{ asset('Rental/js/datatables-simple-demo.js') }}"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+
+    <script>
+        // Download PDF untuk chart Total Income
+        document.getElementById('downloadIncomeChart').addEventListener('click', function () {
+            const chart = document.getElementById('myBarChartMain');
+            html2canvas(chart).then(function (canvas) {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new window.jspdf.jsPDF();
+                pdf.text('Total Income per Bulan', 10, 10);
+                pdf.addImage(imgData, 'PNG', 10, 20, 180, 60);
+                pdf.save('total_income_chart.pdf');
+            });
+        });
+
+        // Download PDF untuk chart Jumlah Penjualan
+        document.getElementById('downloadSalesChart').addEventListener('click', function () {
+            const chart = document.getElementById('myBarChart');
+            html2canvas(chart).then(function (canvas) {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new window.jspdf.jsPDF();
+                pdf.text('Jumlah Penjualan per Bulan', 10, 10);
+                pdf.addImage(imgData, 'PNG', 10, 20, 180, 60);
+                pdf.save('jumlah_penjualan_chart.pdf');
+            });
+        });
+    </script>
 
     <!-- Custom Chart -->
     <script>
@@ -210,10 +248,24 @@
             },
             options: {
                 responsive: true,
+                plugins: {
+                    tooltip: { enabled: true },
+                    legend: { display: true },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: function (value) {
+                            return 'Rp ' + value.toLocaleString('id-ID');
+                        },
+                        color: '#333',
+                        font: { weight: 'bold' }
+                    }
+                },
                 scales: {
                     y: { beginAtZero: true }
                 }
-            }
+            },
+            plugins: [ChartDataLabels]
         });
 
         // Bar Chart kedua: Jumlah Penjualan per Bulan
@@ -232,12 +284,27 @@
             },
             options: {
                 responsive: true,
+                plugins: {
+                    tooltip: { enabled: true },
+                    legend: { display: true },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: function (value) {
+                            return value;
+                        },
+                        color: '#333',
+                        font: { weight: 'bold' }
+                    }
+                },
                 scales: {
                     y: { beginAtZero: true }
                 }
-            }
+            },
+            plugins: [ChartDataLabels]
         });
     </script>
+    <!-- Chart.js datalabels plugin CDN -->
     <script>
         document.addEventListener('click', function (e) {
             if (e.target && e.target.classList.contains('btn-mark-paid')) {

@@ -12,14 +12,25 @@ class AdminController extends Controller
     public function dashboard()
     {
         // Ambil data total pendapatan per bulan untuk chart
-        $chartData = Order::selectRaw("DATE_FORMAT(created_at, '%M %Y') as month, SUM(total_price) as total, COUNT(*) as count")
+        // Siapkan array 12 bulan terakhir
+        $months = collect();
+        $now = now();
+        for ($i = 11; $i >= 0; $i--) {
+            $months->push($now->copy()->subMonths($i)->format('F Y'));
+        }
+
+        // Ambil data order per bulan
+        $rawData = Order::selectRaw("DATE_FORMAT(created_at, '%M %Y') as month, SUM(total_price) as total, COUNT(*) as count")
+            ->where('created_at', '>=', $now->copy()->subMonths(11)->startOfMonth())
             ->groupBy('month')
             ->orderByRaw("MIN(created_at)")
-            ->get();
+            ->get()
+            ->keyBy('month');
+
+        $labels = $months;
+        $data = $months->map(fn($m) => (float) ($rawData[$m]->total ?? 0));
+        $orderCount = $months->map(fn($m) => (int) ($rawData[$m]->count ?? 0));
         $blogs = Blog::all();
-        $labels = $chartData->pluck('month');
-        $data = $chartData->pluck('total');
-        $orderCount = $chartData->pluck('count');
 
         // Ambil data order terbaru, paginasi 10 per halaman
         $order = Order::orderBy('id', 'desc')->paginate(10);
