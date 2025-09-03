@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="text-center">
-                      {{-- <a class="small text-muted" href="#">Forgot password?</a> --}}
+                      <a class="small text-muted" href="{{ route('password.request') }}">Lupa Password?</a>
                       <p class="mt-3 mb-2">Don't have an account? <a href="{{route('register')}}">Register
                           here</a></p>
                       <a href="#" class="small text-muted me-2">Terms of use</a>
