@@ -117,36 +117,8 @@ class OrderController extends Controller
         return view('bayarbooking.invoice', compact('order'));
     }
 
-    public function edit($id)
-{
-    $order = Order::findOrFail($id);
-    return view('admin.orders_edit', compact('order'));
-}
 
-public function update(Request $request, $id)
-{
-    $order = Order::findOrFail($id);
 
-    $validated = $request->validate([
-        'name' => 'required',
-        'phone' => 'required',
-        'qty' => 'required|integer|min:1',
-        'address' => 'required',
-        'total_price' => 'required|numeric',
-        'status' => 'required|in:Paid,Unpaid',
-    ]);
 
-    $order->update($validated);
-
-    return redirect()->route('orders.index')->with('success', 'Order berhasil diperbarui');
-}
-
-public function destroy($id)
-{
-    $order = Order::findOrFail($id);
-    $order->delete();
-
-    return redirect()->route('orders.index')->with('success', 'Order berhasil dihapus');
-}
 
 }

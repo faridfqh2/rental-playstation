@@ -28,7 +28,6 @@
                             <th>Total Harga</th>
                             <th>Status</th>
                             <th>Tanggal</th>
-                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,16 +50,6 @@
                                     @endif
                                 </td>
                                 <td>{{ $item->created_at->format('d-m-Y H:i') }}</td>
-                                <td>
-                                    <a href="{{ route('orders.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                    <form action="{{ route('orders.destroy', $item->id) }}" method="POST"
-                                        style="display:inline-block;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger"
-                                            onclick="return confirm('Yakin ingin menghapus order ini?')">Delete</button>
-                                    </form>
-                                </td>
                             </tr>
                         @endforeach
                     </tbody>
