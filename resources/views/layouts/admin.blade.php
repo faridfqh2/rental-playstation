@@ -96,6 +96,7 @@
       <main>
         <div class="container-fluid px-4">
           @yield('content')
+          @stack('scripts')
         </div>
       </main>
     </div>

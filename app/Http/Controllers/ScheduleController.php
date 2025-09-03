@@ -10,7 +10,6 @@ class ScheduleController extends Controller
     public function index()
     {
     $bookings = Order::where('status', 'paid')
-        ->select('tanggal_booking', 'jam_booking')
         ->get();
 
         return view('schedule', [

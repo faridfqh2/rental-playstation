@@ -11,19 +11,20 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        // Ambil data total pendapatan per hari untuk chart
-        $chartData = Order::selectRaw('DATE(created_at) as date, SUM(total_price) as total')
-            ->groupBy('date')
-            ->orderBy('date', 'asc')
+        // Ambil data total pendapatan per bulan untuk chart
+        $chartData = Order::selectRaw("DATE_FORMAT(created_at, '%M %Y') as month, SUM(total_price) as total, COUNT(*) as count")
+            ->groupBy('month')
+            ->orderByRaw("MIN(created_at)")
             ->get();
         $blogs = Blog::all();
-        $labels = $chartData->pluck('date');
+        $labels = $chartData->pluck('month');
         $data = $chartData->pluck('total');
+        $orderCount = $chartData->pluck('count');
 
         // Ambil data order terbaru, paginasi 10 per halaman
         $order = Order::orderBy('id', 'desc')->paginate(10);
 
-       return view('admin', compact('labels', 'data', 'order','blogs'));
+       return view('admin', compact('labels', 'data', 'order', 'blogs', 'orderCount'));
 
     }
 

@@ -81,19 +81,19 @@
 
             {{-- Alert Success --}}
             @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          {{ session('success') }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      @endif
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            @endif
 
             {{-- Alert Error --}}
             @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          {{ session('error') }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      @endif
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            @endif
 
             <form action="{{ url('/checkout') }}" method="POST">
               @csrf
@@ -110,7 +110,24 @@
 
               <div class="mb-3">
                 <label for="jam_booking" class="form-label">Jam Booking</label>
-                <input type="time" name="jam_booking" id="jam_booking" class="form-control" required>
+                <select name="jam_booking" id="jam_booking" class="form-control" required>
+                  <option value="" disabled selected>Pilih Jam</option>
+                  @for ($i = 10; $i <= 23; $i++) {{-- contoh jam buka dari 10:00 sampai 23:00 --}}
+                    <option value="{{ sprintf('%02d:00', $i) }}">{{ sprintf('%02d:00', $i) }}</option>
+                  @endfor
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="meja" class="form-label">Pilih Meja</label>
+                <select name="meja" id="meja" class="form-control" required>
+                  <option value="" disabled selected>Pilih Meja</option>
+                  @foreach(\App\Models\Order::MEJA as $meja)
+                    <option value="{{ $meja }}">{{ $meja }}</option>
+                  @endforeach
+                </select>
+                <div class="invalid-feedback">
+                  Silakan pilih meja.
+                </div>
               </div>
 
               <div class="mb-3">
@@ -169,7 +186,38 @@
 
     // Set nilai minimal input tanggal ke hari ini
     tanggalInput.min = todayStr;
+    const bookedSlots = @json($bookedSlots);
+
+    const tanggalInput = document.getElementById('tanggal_booking');
+    const mejaSelect = document.getElementById('meja');
+    const jamSelect = document.getElementById('jam_booking');
+
+    function updateJamOptions() {
+      const tanggal = tanggalInput.value;
+      const meja = mejaSelect.value;
+
+      // Reset semua option dulu
+      for (let opt of jamSelect.options) {
+        opt.disabled = false;
+      }
+
+      // Cek slot yang bentrok
+      bookedSlots.forEach(slot => {
+        if (slot.tanggal === tanggal && slot.meja === meja) {
+          const option = [...jamSelect.options].find(opt => opt.value === slot.jam);
+          if (option) {
+            option.disabled = true;
+            option.textContent = `${slot.jam} (Penuh)`; // kasih label biar jelas
+          }
+        }
+      });
+    }
+
+    // Trigger saat pilih tanggal atau meja
+    tanggalInput.addEventListener('change', updateJamOptions);
+    mejaSelect.addEventListener('change', updateJamOptions);
   </script>
+
 </body>
 
 </html>

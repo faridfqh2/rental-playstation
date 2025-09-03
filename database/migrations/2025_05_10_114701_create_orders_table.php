@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bigInteger('total_price');
              $table->date('tanggal_booking');
              $table->time('jam_booking');
+             $table->string('meja')->nullable();
             $table->enum('status',['Unpaid', 'Paid']);
             $table->string('midtrans_order_id')->nullable();
             $table->timestamps();

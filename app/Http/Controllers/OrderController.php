@@ -18,6 +18,8 @@ class OrderController extends Controller
         $bookedSlots = Order::select('tanggal_booking as tanggal', 'jam_booking as jam', 'qty')
             ->where('status', '!=', 'Canceled')
             ->get();
+            $bookedSlots = Order::select('tanggal_booking as tanggal', 'jam_booking as jam', 'meja')->get();
+            
 
         return view('bayarbooking.pembayaran', compact('bookedSlots'));
     }
@@ -52,6 +54,7 @@ class OrderController extends Controller
             'jam_booking' => $request->jam_booking,
             'qty' => (int) $request->qty,
             'address' => $request->address,
+            'meja' => $request->meja,
             'total_price' => (int) $request->qty * 10000,
             'status' => 'Unpaid',
         ]);

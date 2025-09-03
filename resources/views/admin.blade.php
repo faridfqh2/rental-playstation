@@ -98,8 +98,9 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="card mb-4">
-                                <div class="card-header"><i class="fas fa-chart-area me-1"></i> Area Chart</div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                <div class="card-header"><i class="fas fa-chart-bar me-1"></i> Bar Chart</div>
+                                <div class="card-body"><canvas id="myBarChartMain" width="100%" height="40"></canvas>
+                                </div>
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -124,6 +125,7 @@
                                     <tr>
                                         <th>Nama</th>
                                         <th>No. HP</th>
+                                        <th>Meja</th>
                                         <th>Jumlah (Jam)</th>
                                         <th>Alamat</th>
                                         <th>Total Harga</th>
@@ -136,6 +138,7 @@
                                         <tr>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->phone }}</td>
+                                            <td>{{ $item->meja }}</td>
                                             <td>{{ $item->qty }}</td>
                                             <td>{{ $item->address }}</td>
                                             <td>Rp {{ number_format($item->total_price, 0, ',', '.') }}</td>
@@ -143,12 +146,14 @@
                                                 @if ($item->status == 'Paid')
                                                     <span class="badge bg-success">Paid</span>
                                                 @else
-                                                    <form method="POST" action="{{ route('orders.markPaid', $item->id) }}">
+                                                    <form method="POST" action="{{ route('orders.markPaid', $item->id) }}"
+                                                        class="mark-paid-form d-inline">
                                                         @csrf
                                                         @method('PATCH')
-                                                        <button type="submit" class="btn btn-sm btn-warning">Mark as
-                                                            Paid</button>
+                                                        <button type="button" class="btn btn-sm btn-warning btn-mark-paid">Mark
+                                                            as Paid</button>
                                                     </form>
+
                                                 @endif
                                             </td>
 
@@ -180,6 +185,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -188,30 +194,9 @@
 
     <!-- Custom Chart -->
     <script>
-        const ctx = document.getElementById('myAreaChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: {!! json_encode($labels) !!},
-                datasets: [{
-                    label: 'Total Income',
-                    data: {!! json_encode($data) !!},
-                    fill: true,
-                    backgroundColor: 'rgba(78, 115, 223, 0.05)',
-                    borderColor: 'rgba(78, 115, 223, 1)',
-                    tension: 0.3,
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
-        });
-
-        const barCtx = document.getElementById('myBarChart').getContext('2d');
-        new Chart(barCtx, {
+        // Main Bar Chart (menggantikan area chart)
+        const mainBarCtx = document.getElementById('myBarChartMain').getContext('2d');
+        new Chart(mainBarCtx, {
             type: 'bar',
             data: {
                 labels: {!! json_encode($labels) !!},
@@ -230,7 +215,54 @@
                 }
             }
         });
+
+        // Bar Chart kedua: Jumlah Penjualan per Bulan
+        const barCtx = document.getElementById('myBarChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: {!! json_encode($labels) !!},
+                datasets: [{
+                    label: 'Jumlah order',
+                    data: {!! json_encode($orderCount ?? []) !!},
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
     </script>
+    <script>
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.classList.contains('btn-mark-paid')) {
+                e.preventDefault(); // cegah aksi default
+
+                const form = e.target.closest('form');
+
+                Swal.fire({
+                    title: 'Konfirmasi Pembayaran',
+                    text: "Apakah Anda yakin ingin menandai order ini sebagai Paid?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, tandai Paid!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            }
+        });
+    </script>
+
     @stack('scripts')
 </body>
 

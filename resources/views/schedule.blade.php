@@ -213,6 +213,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       const calendarEl = document.getElementById('calendar');
       const bookings = @json($bookings);
+      console.log(bookings);
       const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
 
       const calendar = new FullCalendar.Calendar(calendarEl, {
@@ -247,7 +248,8 @@
               li.className = 'list-group-item d-flex justify-content-between align-items-center';
               li.innerHTML = `
                 <span><i class="bi bi-clock me-2"></i>${booking.jam_booking}</span>
-                <span class="badge bg-primary rounded-pill">${booking.qty} jam</span>
+                <span class="badge bg-primary rounded-pill">${booking.qty} Jam</span>
+                <span class="badge bg-secondary rounded-pill"> Meja Nomor ${booking.meja} </span>
               `;
               timesList.appendChild(li);
             });
