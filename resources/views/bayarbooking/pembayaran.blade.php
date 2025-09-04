@@ -105,7 +105,8 @@
 
               <div class="mb-3">
                 <label for="tanggal_booking" class="form-label">Tanggal Booking</label>
-                <input type="date" name="tanggal_booking" id="tanggal_booking" class="form-control" required>
+                <input type="date" name="tanggal_booking" id="tanggal_booking" class="form-control" required
+                  min="{{ date('Y-m-d') }}">
               </div>
 
               <div class="mb-3">
