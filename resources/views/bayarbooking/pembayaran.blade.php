@@ -77,8 +77,12 @@
 
           <div class="card-body">
             <h5 class="card-title text-primary text-center">Form Pemesanan</h5>
-            <p class="text-center text-muted">Isi data dengan benar sebelum checkout.</p>
 
+            <p class="text-center text-muted">Isi data dengan benar sebelum checkout.</p>
+            <p class="text-center mb-3">
+              Ingin lihat jadwal?
+              <a href="{{ url('/schedule') }}" class="text-decoration-underline fw-bold">Klik Lihat Jadwal</a>
+            </p>
             {{-- Alert Success --}}
             @if (session('success'))
               <div class="alert alert-success alert-dismissible fade show" role="alert">

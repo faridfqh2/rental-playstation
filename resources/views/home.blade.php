@@ -370,7 +370,7 @@
                     </ul>
                   </div>
                   <div class="card-footer bg-transparent border-0">
-                    <a href="/panduan" class="btn btn-primary w-100 stretched-link">Lihat Panduan</a>
+                    <a href="{{ route('informasi') }}" class="btn btn-primary w-100 stretched-link">Lihat Panduan</a>
                   </div>
 
                 </div>

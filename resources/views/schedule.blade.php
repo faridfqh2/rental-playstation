@@ -262,7 +262,11 @@
       calendar.render();
     });
   </script>
-
+  <div class="text-center my-4">
+    <a href="{{ url('pembayaran') }}" class="btn btn-success btn-lg">
+      <i class="bi bi-credit-card me-2"></i>Bayar Booking Sekarang
+    </a>
+  </div>
   <footer class="footer-section bg-dark text-white py-5">
     <div class="container">
       <div class="row g-4">

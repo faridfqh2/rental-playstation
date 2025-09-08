@@ -131,10 +131,10 @@
                                 <thead>
                                     <tr>
                                         <th>Nama</th>
-                                        <th>No. HP</th>
+
                                         <th>Meja</th>
                                         <th>Jumlah (Jam)</th>
-                                        <th>Alamat</th>
+
                                         <th>Total Harga</th>
                                         <th>Status</th>
                                         <th>Tanggal</th>
@@ -144,10 +144,10 @@
                                     @foreach ($order as $item)
                                         <tr>
                                             <td>{{ $item->name }}</td>
-                                            <td>{{ $item->phone }}</td>
+
                                             <td>{{ $item->meja }}</td>
                                             <td>{{ $item->qty }}</td>
-                                            <td>{{ $item->address }}</td>
+
                                             <td>Rp {{ number_format($item->total_price, 0, ',', '.') }}</td>
                                             <td>
                                                 @if ($item->status == 'Paid')
